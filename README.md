@@ -7,7 +7,7 @@
 
 [![Alma.jpg](https://i.postimg.cc/NfD2pq33/Alma.jpg)](https://postimg.cc/w7tBjPT2)
 
-- 🌊 **Andrea Natalí Ortega Anguilar** - [Andrea](https://github.com/NaraliOA)
+- 🌊 **Andrea Natalí Ortega Aguilar** - [Andrea](https://github.com/NaraliOA)
 
 [![Dea.jpg](https://i.postimg.cc/85wgx4Tz/Dea.jpg)](https://postimg.cc/CBZ2qjZ3)
 
