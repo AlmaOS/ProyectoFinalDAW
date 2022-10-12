@@ -1,18 +1,19 @@
 *{
     margin: 0;
-    box-sizing: border-box;
 }
 
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
+
+/*------------------Barra navegacion------------------*/
 
 .barraNavegacion{
     display: flex;
     justify-content: space-between;
     background-color: #273f63;
     height: 80px;
-    width: 100%;
     align-items: center;
 }
 
@@ -26,16 +27,73 @@ body{
     font-size: 17pt;
     font-weight: bold;
     padding: 0 40px;
+    
 }
 
 .listaMenu{
     margin-right: 40px;
+    display: flex;
 }
 
-.menuLink:hover{
+.menuIteam:hover, .resaltable{
     background-color: #A9D6E5;
+    transition: 0.5s;
 }
 
-.menuLink{
+.menuIteam{
     padding: 8px 12px;
+}
+
+.botonBarra{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 17pt;
+    display: none;
+}
+
+@media screen and (max-width: 765px){
+    body{
+        background-color: red;
+    }
+
+    .barraNavegacion{
+        height: 60px;
+    }
+    
+    .barraNavegacion a{
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .logoIglesia{
+        font-size: 12pt;
+    }
+    
+    /*Aquí para acomodar el menu*/
+    .listaMenu{
+        flex-direction: column;
+        background-color: #0d47a1;
+        position: fixed;
+        left: 0;
+        top: 59px;
+        width: 100%;
+        
+        left: 100%;
+        transition: left 0.3s;
+    }
+    
+    .menuIteam:hover{
+        background-color: #A9D6E5;
+        color: black;
+    }
+
+    .botonBarra{
+        display: block;
+    }
+
+    .menuDesplegable{
+        left: 0;
+    }
 }
