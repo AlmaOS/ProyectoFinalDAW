@@ -1,11 +1,8 @@
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
 *{
     margin: 0;
-}
-
-body{
     font-family: Arial, Helvetica, sans-serif;
 }
-/*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
 
 /*------------------Barra navegacion------------------*/
 
@@ -38,7 +35,6 @@ li{
     font-size: 17pt;
     font-weight: bold;
     padding: 0 40px;
-    
 }
 
 .listaMenu{
@@ -47,7 +43,7 @@ li{
 }
 
 .menuIteam:hover, .resaltable{
-    background-color: #A9D6E5;
+    background-color: #0d47a1;
     transition: 0.5s;
 }
 
@@ -69,14 +65,65 @@ li{
     display: grid;
     grid-template-columns: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: red;
 }
 
-#contenedorPrincipalInformacion div{
-    border: 2px solid red;
+#imagenPrincipalIndex{
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
 }
 
-@media screen and (max-width: 801px){
+#segundoContenedorIndex{
+    background-color: #33415c;
+    text-align: center;
+    width: 100%;
+}
+
+#segundoContenedorIndex h2{
+    color: white;
+}
+
+#MVI{
+    width: 350px;
+    height: 166px;
+}
+
+#tercerContenedorIndex{
+    background-color: #bbdefb;
+}
+.imagenesTercerContenedor{
+    margin: 10px 40px;
+    height: 250px;
+    width: 850px;
+}
+
+.textoTercerContenedor{
+    margin: 10px 40px;
+    width: 850px;
+    background-color: #273f63;
+    text-align: center;
+}
+
+.contenedoresSecundariosIndex{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.contenedoresSecundariosIndex div{
+    margin: 10px 40px;
+    font-size: 13pt;
+    color: white;
+}
+
+.textoJustificadoDiv{
+    text-align: justify;
+}
+
+/*-----------------Configuraciones para pantallas----------*/
+/*Cambio cuando sea menos de 802*/
+@media screen and (max-width: 802px){
     body{
         background-color: rgb(227, 159, 159);
     }
