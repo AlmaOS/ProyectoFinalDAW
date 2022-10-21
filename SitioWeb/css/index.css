@@ -1,11 +1,8 @@
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
 *{
     margin: 0;
-}
-
-body{
     font-family: Arial, Helvetica, sans-serif;
 }
-/*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
 
 /*------------------Barra navegacion------------------*/
 
@@ -14,7 +11,16 @@ body{
     justify-content: space-between;
     background-color: #273f63;
     height: 80px;
+    width: 100%;
     align-items: center;
+    position: fixed;
+    top:0;
+}
+
+#primerDivConLogo{
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
 }
 
 .barraNavegacion a{
@@ -23,11 +29,22 @@ body{
     display: inline-block;
 }
 
-.logoIglesia{
+.barraNavegacion > div{
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    display: inline;
+}
+
+.logoIglesiaMenu{
     font-size: 17pt;
     font-weight: bold;
     padding: 0 40px;
-    
 }
 
 .listaMenu{
@@ -36,7 +53,7 @@ body{
 }
 
 .menuIteam:hover, .resaltable{
-    background-color: #A9D6E5;
+    background-color: #0d47a1;
     transition: 0.5s;
 }
 
@@ -52,11 +69,33 @@ body{
     display: none;
 }
 
-@media screen and (max-width: 765px){
+/*------------------Pie de pagina-----------------------*/
+.piePagina{
+    height: 500px;
+    background-color: #e3f2fd;
+}
+
+/*------------------ContenidoPrincipal------------------*/
+#contenedorPrincipalInformacion{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 100%;
+    width: 100%;
+    background-color: red;
+}
+
+/*-----------------Configuraciones para pantallas----------*/
+/*-----------------Barra de navegacion---------------------*/
+/*Cambio cuando sea menos de 802*/
+@media screen and (max-width: 802px){
     body{
-        background-color: red;
+        background-color: rgb(227, 159, 159);
     }
 
+    #contenedorPrincipalInformacion{
+        margin-top: 60px;
+    }
+    
     .barraNavegacion{
         height: 60px;
     }
@@ -95,5 +134,41 @@ body{
 
     .menuDesplegable{
         left: 0;
+    }
+
+    li{
+        display: block;
+        width: 100%;
+    }
+
+    ul{
+        padding: 0;
+    }
+
+    .barraNavegacion a{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 321px){
+    #MVI{
+        width: 250px;
+        height: 100px;
+    }
+
+    .imagenesTercerContenedor{
+        height: 100px;
+        width: 150px;
+        margin: 10px 15px;
+    }
+
+    .logoIglesiaMenu{
+        font-size: 17pt;
+        font-weight: bold;
+        padding: 0 5px;
+    }
+
+    #mapa{
+        width:300px; height:200px;
     }
 }
