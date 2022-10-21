@@ -17,10 +17,20 @@
     top:0;
 }
 
+#primerDivConLogo{
+    align-items: center;
+    display: flex;
+    white-space: nowrap;
+}
+
 .barraNavegacion a{
     color: white;
     text-decoration: none;
     display: inline-block;
+}
+
+.barraNavegacion > div{
+    align-items: center;
 }
 
 ul{
@@ -31,7 +41,7 @@ li{
     display: inline;
 }
 
-.logoIglesia{
+.logoIglesiaMenu{
     font-size: 17pt;
     font-weight: bold;
     padding: 0 40px;
@@ -57,6 +67,12 @@ li{
     border: none;
     font-size: 17pt;
     display: none;
+}
+
+/*------------------Pie de pagina-----------------------*/
+.piePagina{
+    height: 500px;
+    background-color: #e3f2fd;
 }
 
 /*------------------ContenidoPrincipal------------------*/
@@ -91,7 +107,18 @@ li{
 
 #tercerContenedorIndex{
     background-color: #bbdefb;
+    display: flex;
+    flex-direction: column;
 }
+
+.contenedoresTerciariosIndex{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 13pt;
+    color: white;
+}
+
 .imagenesTercerContenedor{
     margin: 10px 40px;
     height: 250px;
@@ -105,9 +132,33 @@ li{
     text-align: center;
 }
 
+#cuardoContenedorIndex{
+    background-color: #273f63;
+}
+
+.logoIglesia{
+    width: 100px;
+    height: 100px;
+}
+
+#tituloPrincipalCuartoContenedor{
+    width: 100%;
+    margin: 0 0 25px;
+    border-bottom: solid white;
+}
+
+#mapa{
+    width:350px; height:200px;
+}
+
+#quintoContenedor{
+    background-color: white;
+    height: 500px;
+}
+
 .contenedoresSecundariosIndex{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -122,6 +173,7 @@ li{
 }
 
 /*-----------------Configuraciones para pantallas----------*/
+/*-----------------Barra de navegacion---------------------*/
 /*Cambio cuando sea menos de 802*/
 @media screen and (max-width: 802px){
     body{
@@ -185,3 +237,78 @@ li{
         width: 100%;
     }
 }
+
+/*---------------------Index-------------------------*/
+/*Cambio cuando sea menos de 802*/
+@media screen and (max-width: 870px){
+    .contenedoresSecundariosIndex{
+        flex-direction: column;
+    }
+
+    .imagenesTercerContenedor{
+        height: 250px;
+        width: 350px;
+    }
+
+    #tercerContenedorIndex{
+        flex-direction: row;
+    }
+
+    .textoTercerContenedor{
+        margin: 0;
+        width: auto;
+    }
+
+    .contenedoresSecundariosIndex div{
+        margin: 10px 15px;
+    }
+
+    .contenedoresTerciariosIndex{
+        flex-direction: column;
+        margin: 10px 5px;
+        
+    }
+}
+
+@media screen and (max-width: 545px){
+    .imagenesTercerContenedor{
+        height: 150px;
+        width: 250px;
+        margin: 10px 15px;
+    }
+
+    .contenedoresTerciariosIndex{
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 417px){
+    .contenedoresTerciariosIndex{
+        font-size: 11pt;
+    }
+}
+
+@media screen and (max-width: 321px){
+    #MVI{
+        width: 250px;
+        height: 100px;
+    }
+
+    .imagenesTercerContenedor{
+        height: 100px;
+        width: 150px;
+        margin: 10px 15px;
+    }
+
+    .logoIglesiaMenu{
+        font-size: 17pt;
+        font-weight: bold;
+        padding: 0 5px;
+    }
+
+    #mapa{
+        width:300px; height:200px;
+    }
+}
+
+
