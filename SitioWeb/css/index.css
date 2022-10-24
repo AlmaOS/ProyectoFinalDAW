@@ -2,6 +2,7 @@
 *{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
 /*------------------Barra navegacion------------------*/
@@ -25,7 +26,6 @@
 
 .barraNavegacion a{
     color: white;
-    text-decoration: none;
     display: inline-block;
 }
 
@@ -81,7 +81,7 @@ li{
     display: grid;
     grid-template-columns: 100%;
     width: 100%;
-    background-color: red;
+    background-color: white;
 }
 
 #imagenPrincipalIndex{
@@ -153,7 +153,45 @@ li{
 
 #quintoContenedor{
     background-color: white;
-    height: 500px;
+}
+
+#aux{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.cuadrosOpcionesQuintoContenedor{
+    width: 250px;
+    height: 400px;
+    background-color: #0d47a1;
+    margin: 25px 40px;
+    font-size: 13pt;
+    color: white;
+
+    text-align: center;
+    align-items: center;
+}
+
+/*divs que están dentro de cuadrosOpcionesQuintoContenedor */
+.recuadrosOpcionesQuintoContenedor{
+    background-color: #002855;
+    font-size: 18pt;
+    color: white;
+    width: 200px;
+    height: 150px;
+    margin: 40px 25px 100px 25px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.botonQuintoContenedor{
+    width: 200px;
+    background-color: #e3f2fd;
+    color: #737373;
+    border-radius: 10px;
+    height: 30px;
 }
 
 .contenedoresSecundariosIndex{
@@ -171,13 +209,21 @@ li{
 .textoJustificadoDiv{
     text-align: justify;
 }
+/*-----------------Sobre nosotros--------------------------*/
+#contenedorPrincipalSobreNosotros{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 100%;
+    width: 100%;
+    background-color: white;
+}
 
 /*-----------------Configuraciones para pantallas----------*/
 /*-----------------Barra de navegacion---------------------*/
 /*Cambio cuando sea menos de 802*/
-@media screen and (max-width: 802px){
+@media screen and (max-width: 807px){
     body{
-        background-color: rgb(227, 159, 159);
+        background-color: white;
     }
 
     #contenedorPrincipalInformacion{
@@ -235,7 +281,7 @@ li{
 
     .barraNavegacion a{
         width: 100%;
-    }
+    }    
 }
 
 /*---------------------Index-------------------------*/
@@ -266,8 +312,8 @@ li{
     .contenedoresTerciariosIndex{
         flex-direction: column;
         margin: 10px 5px;
-        
     }
+
 }
 
 @media screen and (max-width: 545px){
@@ -311,4 +357,54 @@ li{
     }
 }
 
+/*De 481 hasta 775*/
+@media screen and (min-width: 806px) and (max-width: 927px){
+    .cuadrosOpcionesQuintoContenedor{
+        width: 250px;
+        height: 400px;
+        margin: 25px 10px;
+    }
+    
+    /*divs que están dentro de cuadrosOpcionesQuintoContenedor */
+    .recuadrosOpcionesQuintoContenedor{
+        font-size: 18pt;
+        width: 200px;
+        height: 150px;
+        margin: 40px 25px 100px 25px;
+    }
+    
+    .botonQuintoContenedor{
+        width: 200px;
+        height: 30px;
+    }
+}
+
+@media screen and (min-width: 585px) and (max-width: 807px){
+    
+    .cuadrosOpcionesQuintoContenedor{
+        width: 180px;
+        height: 400px;
+        margin: 25px 5px;
+    }
+    
+    /*divs que están dentro de cuadrosOpcionesQuintoContenedor */
+    .recuadrosOpcionesQuintoContenedor{
+        font-size: 15pt;
+        width: 140px;
+        height: 150px;
+        margin: 40px 25px 100px 25px;
+    }
+    
+    .botonQuintoContenedor{
+        width: 140px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 585px){
+    #aux{
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
