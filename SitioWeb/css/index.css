@@ -5,6 +5,10 @@
     text-decoration: none;
 }
 
+h2{
+    margin-top: 10px;
+}
+
 /*------------------Barra navegacion------------------*/
 
 .barraNavegacion{
@@ -90,13 +94,13 @@ li{
     min-height: 100%;
 }
 
-#segundoContenedorIndex{
+.segundoContenedorIndex{
     background-color: #33415c;
     text-align: center;
     width: 100%;
 }
 
-#segundoContenedorIndex h2{
+.segundoContenedorIndex h2{
     color: white;
 }
 
@@ -218,6 +222,32 @@ li{
     background-color: white;
 }
 
+#primerContenedorSobNos{
+    background-repeat: repeat;
+    height: 350px;
+    width: 100%;
+    background-image: url("../img/color.jpg");
+    text-align: center;
+    padding: 125px 40px;
+    box-sizing: border-box;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.contenedorTexto{
+    font-size: 12pt;
+    color: white;
+    margin: 10px 0;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+.titulos{
+    width: 50%;
+    margin-left: 25%;
+    border-bottom: solid white;
+}
+
 /*-----------------Configuraciones para pantallas----------*/
 /*-----------------Barra de navegacion---------------------*/
 /*Cambio cuando sea menos de 802*/
@@ -226,7 +256,7 @@ li{
         background-color: white;
     }
 
-    #contenedorPrincipalInformacion{
+    #contenedorPrincipalInformacion, #contenedorPrincipalSobreNosotros{
         margin-top: 60px;
     }
     
