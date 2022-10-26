@@ -1,8 +1,11 @@
-/*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
 *{
     margin: 0;
+}
+
+body{
     font-family: Arial, Helvetica, sans-serif;
 }
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
 
 /*------------------Barra navegacion------------------*/
 
@@ -11,16 +14,7 @@
     justify-content: space-between;
     background-color: #273f63;
     height: 80px;
-    width: 100%;
     align-items: center;
-    position: fixed;
-    top:0;
-}
-
-#primerDivConLogo{
-    align-items: center;
-    display: flex;
-    white-space: nowrap;
 }
 
 .barraNavegacion a{
@@ -29,22 +23,11 @@
     display: inline-block;
 }
 
-.barraNavegacion > div{
-    align-items: center;
-}
-
-ul{
-    list-style-type: none;
-}
-
-li{
-    display: inline;
-}
-
-.logoIglesiaMenu{
+.logoIglesia{
     font-size: 17pt;
     font-weight: bold;
     padding: 0 40px;
+    
 }
 
 .listaMenu{
@@ -53,7 +36,7 @@ li{
 }
 
 .menuIteam:hover, .resaltable{
-    background-color: #0d47a1;
+    background-color: #A9D6E5;
     transition: 0.5s;
 }
 
@@ -69,33 +52,94 @@ li{
     display: none;
 }
 
-/*------------------Pie de pagina-----------------------*/
-.piePagina{
-    height: 500px;
-    background-color: #e3f2fd;
-}
-
-/*------------------ContenidoPrincipal------------------*/
-#contenedorPrincipalInformacion{
-    margin-top: 80px;
+/*------------------Contenido Inicio Sesion------------------*/
+.contenedorPrincipal{
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 50% 50%;
+    height: 100%;
     width: 100%;
-    background-color: red;
+    background-color: #A9D6E5;
 }
 
-/*-----------------Configuraciones para pantallas----------*/
-/*-----------------Barra de navegacion---------------------*/
-/*Cambio cuando sea menos de 802*/
-@media screen and (max-width: 802px){
+#logoInicio{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#formularioInicio{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10% 5% 10% 10%;
+}
+
+.formulario{
+    font-size: 20px;
+    padding: 10%;
+    background-color: #efefef;
+    width: 60%;
+    height: 80%;
+    border-radius: 5px;
+}
+
+input{
+    outline: none;
+}
+.campoTexto{
+    padding: 10px;
+    width: 90%;
+    border-radius: 3px;
+    border: solid 1px midnightblue;
+}
+.campoTexto:focus{
+    border: solid 3px #567ba8;
+}
+
+.btn{
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px 10px;
+    background-color: #002855;
+    color: white;
+    border: none;
+    width: 80%;
+}
+
+.btn:hover{
+    background-color: #0a3f7a;
+    color: white;
+}
+
+.btn:active{
+    background-color: #2b6cbb;
+    color: white;
+}
+
+p.alinear{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    color: #002855;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover{
+    color: #2b6cbb;
+}
+
+@media screen and (max-width: 765px){
     body{
-        background-color: rgb(227, 159, 159);
+        background-color: red;
     }
 
-    #contenedorPrincipalInformacion{
-        margin-top: 60px;
-    }
-    
     .barraNavegacion{
         height: 60px;
     }
@@ -134,41 +178,5 @@ li{
 
     .menuDesplegable{
         left: 0;
-    }
-
-    li{
-        display: block;
-        width: 100%;
-    }
-
-    ul{
-        padding: 0;
-    }
-
-    .barraNavegacion a{
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 321px){
-    #MVI{
-        width: 250px;
-        height: 100px;
-    }
-
-    .imagenesTercerContenedor{
-        height: 100px;
-        width: 150px;
-        margin: 10px 15px;
-    }
-
-    .logoIglesiaMenu{
-        font-size: 17pt;
-        font-weight: bold;
-        padding: 0 5px;
-    }
-
-    #mapa{
-        width:300px; height:200px;
     }
 }
