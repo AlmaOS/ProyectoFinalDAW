@@ -20,6 +20,7 @@ h2{
     align-items: center;
     position: fixed;
     top:0;
+    z-index: 10;
 }
 
 #primerDivConLogo{
@@ -80,7 +81,11 @@ li{
 }
 
 /*------------------ContenidoPrincipal------------------*/
-#contenedorPrincipalInformacion{
+.elementosBlancos{
+    color: white;
+}
+
+.contenedorPrincipalInformacion{
     margin-top: 80px;
     display: grid;
     grid-template-columns: 100%;
@@ -100,10 +105,6 @@ li{
     width: 100%;
 }
 
-.segundoContenedorIndex h2{
-    color: white;
-}
-
 #MVI{
     width: 350px;
     height: 166px;
@@ -120,7 +121,6 @@ li{
     justify-content: space-around;
     width: 100%;
     font-size: 13pt;
-    color: white;
 }
 
 .imagenesTercerContenedor{
@@ -171,7 +171,6 @@ li{
     background-color: #0d47a1;
     margin: 25px 40px;
     font-size: 13pt;
-    color: white;
 
     text-align: center;
     align-items: center;
@@ -181,7 +180,6 @@ li{
 .recuadrosOpcionesQuintoContenedor{
     background-color: #002855;
     font-size: 18pt;
-    color: white;
     width: 200px;
     height: 150px;
     margin: 40px 25px 100px 25px;
@@ -210,17 +208,7 @@ li{
     color: white;
 }
 
-.textoJustificadoDiv{
-    text-align: justify;
-}
 /*-----------------Sobre nosotros--------------------------*/
-#contenedorPrincipalSobreNosotros{
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: 100%;
-    width: 100%;
-    background-color: white;
-}
 
 #primerContenedorSobNos{
     background-repeat: repeat;
@@ -246,6 +234,8 @@ li{
     width: 50%;
     margin-left: 25%;
     border-bottom: solid white;
+    color: white;
+    margin-bottom: 15px;
 }
 
 #tercercontenedorSB{
@@ -292,6 +282,44 @@ li{
     margin-bottom: 10px;
 }
 
+.contenedorGenericoSN{
+    display: flex;
+    width: 100%;
+    background-color: #002855;
+}
+
+.contenedorGenericoSN2{
+    background-color: #bbdefb;
+}
+
+.subContenedorGenerico1{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px 50px;
+}
+
+.subContenedorGenerico2{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 50px;
+    justify-content: center;
+}
+
+.parrafo{
+    text-align: justify;
+    color: white;
+}
+
+.parrafoNegro{
+    color: black;
+}
+
+.tituloNegro{
+    color: #273f63;
+}
+
 /*-----------------Configuraciones para pantallas----------*/
 /*-----------------Barra de navegacion---------------------*/
 /*Cambio cuando sea menos de 802*/
@@ -300,7 +328,7 @@ li{
         background-color: white;
     }
 
-    #contenedorPrincipalInformacion, #contenedorPrincipalSobreNosotros{
+    .contenedorPrincipalInformacion, #contenedorPrincipalSobreNosotros{
         margin-top: 60px;
     }
     
@@ -476,7 +504,7 @@ li{
 }
 
 @media screen and (max-width: 585px){
-    #aux{
+    .aux{
         flex-direction: column;
         align-items: center;
     }
