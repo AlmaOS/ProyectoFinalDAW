@@ -159,7 +159,7 @@ li{
     background-color: white;
 }
 
-#aux{
+.aux{
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -246,6 +246,50 @@ li{
     width: 50%;
     margin-left: 25%;
     border-bottom: solid white;
+}
+
+#tercercontenedorSB{
+    background-color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.lideresIglesiaCuadro{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    width: 300px;
+    height: 250px;
+    
+}
+
+.titulos2{
+    width: 50%;
+    margin-left: 25%;
+    border-bottom: solid #0d47a1;
+    color: #002855;
+}
+
+.imagenTercerContenedor{
+    width: 150px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+#contenedorTercerContenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.cuadrosTercerContenedorSN .tex{
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.titulos3{
+    color: #273f63;
+    margin-bottom: 10px;
 }
 
 /*-----------------Configuraciones para pantallas----------*/
