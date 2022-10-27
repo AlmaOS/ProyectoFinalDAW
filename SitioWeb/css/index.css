@@ -212,7 +212,6 @@ li{
 
 #primerContenedorSobNos{
     background-repeat: repeat;
-    height: 350px;
     width: 100%;
     background-image: url("../img/color.jpg");
     text-align: center;
@@ -230,14 +229,6 @@ li{
     padding: 0 20px;
 }
 
-.titulos{
-    width: 50%;
-    margin-left: 25%;
-    border-bottom: solid white;
-    color: white;
-    margin-bottom: 15px;
-}
-
 #tercercontenedorSB{
     background-color: white;
     width: 100%;
@@ -250,31 +241,34 @@ li{
     font-size: 12pt;
     width: 300px;
     height: 250px;
-    
-}
-
-.titulos2{
-    width: 50%;
-    margin-left: 25%;
-    border-bottom: solid #0d47a1;
-    color: #002855;
 }
 
 .imagenTercerContenedor{
     width: 150px;
-    margin: 0;
-    border: 0;
-    padding: 0;
 }
 
 #contenedorTercerContenedor{
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
-.cuadrosTercerContenedorSN .tex{
+.cuadrosTercerContenedorSN .tex, .parrafo{
     padding: 0 100px;
     box-sizing: border-box;
+}
+
+.titulos1, .titulos2{
+    width: 50%;
+    margin-left: 25%;
+    border-bottom: solid white;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.titulos2{
+    border-bottom: solid #0d47a1;
+    color: #002855;
 }
 
 .titulos3{
@@ -295,7 +289,7 @@ li{
 .subContenedorGenerico1{
     width: 50%;
     box-sizing: border-box;
-    padding: 10px 50px;
+    padding: 10px 0px;
 }
 
 .subContenedorGenerico2{
@@ -314,10 +308,6 @@ li{
 
 .parrafoNegro{
     color: black;
-}
-
-.tituloNegro{
-    color: #273f63;
 }
 
 /*-----------------Configuraciones para pantallas----------*/
@@ -503,10 +493,40 @@ li{
     }
 }
 
+
+
 @media screen and (max-width: 585px){
     .aux{
         flex-direction: column;
         align-items: center;
+    }
+ /*puse sobre nosotros aquí*/
+    #contenedorTercerContenedor{
+        flex-direction: column;
+    }
+
+    .contenedorGenericoSN{
+        flex-direction: column;
+    }
+
+    .subContenedorGenerico1{
+        width: 100%;
+    }
+    
+    .subContenedorGenerico2{
+        display: flex;
+        width: 100%;
+    }
+}
+
+/*De 481 hasta 775*/
+@media screen and (min-width: 585px) and (max-width: 831px){
+    #contenedorTercerContenedor{
+        flex-direction: column;
+    }
+
+    .cuadrosTercerContenedorSN .tex, .parrafo{
+        padding: 0 50px;
     }
 }
 
