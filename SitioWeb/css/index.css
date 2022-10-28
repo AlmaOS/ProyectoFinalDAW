@@ -103,6 +103,8 @@ li{
     background-color: #33415c;
     text-align: center;
     width: 100%;
+    box-sizing: border-box;
+    padding: 15px 0;
 }
 
 #MVI{
@@ -114,6 +116,8 @@ li{
     background-color: #bbdefb;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    padding: 15px 0;
 }
 
 .contenedoresTerciariosIndex{
@@ -136,8 +140,20 @@ li{
     text-align: center;
 }
 
-#cuardoContenedorIndex{
+#cuartoContenedorIndex{
     background-color: #273f63;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+
+#cuartoContenedorIndex img{
+    width: 25px;
+    height: 25px;
+}
+
+#cuartoContenedorIndex img[class="logoIglesia"]{
+    width: 50px;
+    height: 50px;
 }
 
 .logoIglesia{
@@ -171,9 +187,22 @@ li{
     background-color: #0d47a1;
     margin: 25px 40px;
     font-size: 13pt;
+    border-radius: 10px;
 
     text-align: center;
     align-items: center;
+
+    transition: 0.25s;
+}
+
+#quintoContenedor .cuadrosOpcionesQuintoContenedor:hover{
+    /*transform: scale(1.15);*/
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.347);
+    transform: translateY(-20px);
+}
+
+.textoJustificadoDiv{
+    text-align: justify;
 }
 
 /*divs que están dentro de cuadrosOpcionesQuintoContenedor */
@@ -189,17 +218,29 @@ li{
 }
 
 .botonQuintoContenedor{
-    width: 200px;
     background-color: #e3f2fd;
+    border: 2px solid #e3f2fd;
+    width: 200px;
+    padding: 15px 32px;
     color: #737373;
     border-radius: 10px;
-    height: 30px;
+    font-weight: bold;
+    font-size: 12pt;
+    box-sizing: border-box;
+}
+
+.botonQuintoContenedor:hover{
+    transition: 0.25s;
+    background-color: #273f63;
+    border: 2px solid #273f63;
+    color: white;
 }
 
 .contenedoresSecundariosIndex{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
 }
 
 .contenedoresSecundariosIndex div{
@@ -233,6 +274,8 @@ li{
     background-color: white;
     width: 100%;
     text-align: center;
+    box-sizing: border-box;
+    padding: 15px 0;
 }
 
 .lideresIglesiaCuadro{
@@ -339,7 +382,7 @@ li{
     /*Aquí para acomodar el menu*/
     .listaMenu{
         flex-direction: column;
-        background-color: #0d47a1;
+        background-color: rgba(13, 71, 161, 0.6);
         position: fixed;
         left: 0;
         top: 59px;
@@ -374,10 +417,14 @@ li{
     .barraNavegacion a{
         width: 100%;
     }    
+
+    .menuIteam:hover, .resaltable{
+        background-color: #0d48a100;
+    }
 }
 
 /*---------------------Index-------------------------*/
-/*Cambio cuando sea menos de 802*/
+/*Cambio cuando sea menos de 870*/
 @media screen and (max-width: 870px){
     .contenedoresSecundariosIndex{
         flex-direction: column;
@@ -426,6 +473,32 @@ li{
     }
 }
 
+/*De 481 hasta 775*/
+@media screen and (min-width: 321px) and (max-width: 364px){
+    #MVI{
+        width: 270px;
+        height: 120px;
+    }
+
+    #mapa{
+        width:300px; height:200px;
+    }
+
+    .contenedoresTerciariosIndex{
+        font-size: 11pt;
+    }
+    
+    .imagenesTercerContenedor{
+        height: 100px;
+        width: 150px;
+        margin: 10px 15px;
+    }
+
+    .logoIglesiaMenu{
+        padding: 0 20px;
+    }
+}
+
 @media screen and (max-width: 321px){
     #MVI{
         width: 250px;
@@ -467,7 +540,6 @@ li{
     
     .botonQuintoContenedor{
         width: 200px;
-        height: 30px;
     }
 }
 
@@ -489,7 +561,6 @@ li{
     
     .botonQuintoContenedor{
         width: 140px;
-        height: 30px;
     }
 }
 
