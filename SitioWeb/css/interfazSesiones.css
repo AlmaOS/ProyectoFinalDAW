@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.principal{
+    height: 100%;
+    width: 100%;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 90% 10%;
+    background-color: #273f63;
+    height: 15%;
+}
+
+.salir{
+    background-color: #0d47a1;
+    font-family: "Century Gothic", Calibri;
+    font-weight: bold;
+    color:#38b6ff;
+    text-align: center;
+    padding-top: 40%;
+}
+
+.logo{
+    width: 10%;
+}
+
+.content{
+    display: grid;
+}
+
+img{
+    width: 100%;
+}
