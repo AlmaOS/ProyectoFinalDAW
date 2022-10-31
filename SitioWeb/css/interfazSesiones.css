@@ -3,16 +3,15 @@ body{
     padding: 0;
 }
 
-.principal{
-    height: 100%;
-    width: 100%;
+a{
+    text-decoration: none
 }
 
 .header{
-    display: grid;
-    grid-template-columns: 90% 10%;
+    display: flex;
     background-color: #273f63;
-    height: 15%;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .salir{
@@ -21,7 +20,12 @@ body{
     font-weight: bold;
     color:#38b6ff;
     text-align: center;
-    padding-top: 40%;
+    font-size: 20px;
+    padding: 3% 5%;
+}
+
+.salir:hover{
+    color: #273f63;
 }
 
 .logo{
@@ -29,9 +33,59 @@ body{
 }
 
 .content{
-    display: grid;
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 img{
     width: 100%;
+}
+
+.ícono{
+    display: flex;
+    background-color: #002855;
+    width: 8%;
+    padding: 5%;
+    border-radius: 50%;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.txtIcon{
+    text-align: center;
+    font-family: "Century Gothic", Calibri;
+    color: black;
+    font-weight: bold;
+}
+
+.txtIcon:hover{
+    color: white;
+}
+
+@media screen and (max-width: 1050px){
+    .logo{
+        width: 15%;
+    }
+
+    .salir{
+        padding: 4% 5%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .logo{
+        width: 20%;
+    }
+
+    .imgIcon{
+        width: 100%;
+    }
+
+    .ícono{
+        width: 25%;
+        border-radius: 20%;
+    }
 }
