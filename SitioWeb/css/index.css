@@ -42,7 +42,7 @@ ul{
     list-style-type: none;
 }
 
-li{
+.listaMenu li{
     display: inline;
 }
 
@@ -76,8 +76,52 @@ li{
 
 /*------------------Pie de pagina-----------------------*/
 .piePagina{
-    height: 500px;
-    background-color: #e3f2fd;
+    background-color: #273f63;
+    display: grid;
+    grid-template-columns: 10% 30% 30%;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+#imgLogo{
+    width: 100%;
+}
+
+.borderEsp{
+    border-left: 2px white dotted;
+    padding: 7% 0;
+}
+
+.pieSubt{
+    color: white;
+    font-weight: bold;
+    margin: 2%;
+    text-align: center;
+}
+
+.direcciones{
+    list-style-type: disc;
+}
+
+.direcciones li{
+    color: white;
+}
+
+.pieLista{
+    color: white;
+    text-decoration: none;
+
+}
+
+.pieLista:hover{
+    text-decoration: underline;
+}
+
+.gap{
+    height: 10%;
+    grid-column: 1/4;
+    color:#273f63;
+   margin: 0.5%;
 }
 
 /*------------------ContenidoPrincipal------------------*/
@@ -355,7 +399,7 @@ li{
 
 /*-----------------Configuraciones para pantallas----------*/
 /*-----------------Barra de navegacion---------------------*/
-/*Cambio cuando sea menos de 802*/
+/*Cambio cuando sea menos de 807*/
 @media screen and (max-width: 807px){
     body{
         background-color: white;
@@ -405,12 +449,12 @@ li{
         left: 0;
     }
 
-    li{
+    .listaMenu li{
         display: block;
         width: 100%;
     }
 
-    ul{
+    .listaMenu ul{
         padding: 0;
     }
 
@@ -453,6 +497,10 @@ li{
         margin: 10px 5px;
     }
 
+    .piePagina{
+        grid-template-columns: 20% 35% 35%;
+    }
+
 }
 
 @media screen and (max-width: 545px){
@@ -464,6 +512,32 @@ li{
 
     .contenedoresTerciariosIndex{
         font-size: 12pt;
+    }
+
+    .piePagina{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #imgLogo{
+        width: 50%;
+        padding-left: 25%;
+    }
+
+    .gap{
+        display: none;
+    }
+
+    .borderEsp{
+        border-left: none;
+        border-top: 2px white dotted;
+        margin: 0 5%;
+        padding-left: 10%;
+    }
+
+    .navPie{
+        padding-left: 25%;
     }
 }
 
@@ -497,6 +571,11 @@ li{
     .logoIglesiaMenu{
         padding: 0 20px;
     }
+
+    .borderEsp{
+        padding:2% 6%;
+    }
+
 }
 
 @media screen and (max-width: 321px){
@@ -519,6 +598,10 @@ li{
 
     #mapa{
         width:300px; height:200px;
+    }
+
+    .borderEsp{
+        padding: 3% 3%;
     }
 }
 
@@ -588,6 +671,8 @@ li{
         display: flex;
         width: 100%;
     }
+
+
 }
 
 /*De 481 hasta 775*/
