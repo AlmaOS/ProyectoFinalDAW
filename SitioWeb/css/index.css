@@ -9,121 +9,6 @@ h2{
     margin-top: 10px;
 }
 
-/*------------------Barra navegacion------------------*/
-
-.barraNavegacion{
-    display: flex;
-    justify-content: space-between;
-    background-color: #273f63;
-    height: 80px;
-    width: 100%;
-    align-items: center;
-    position: fixed;
-    top:0;
-    z-index: 10;
-}
-
-#primerDivConLogo{
-    align-items: center;
-    display: flex;
-    white-space: nowrap;
-}
-
-.barraNavegacion a{
-    color: white;
-    display: inline-block;
-}
-
-.barraNavegacion > div{
-    align-items: center;
-}
-
-ul{
-    list-style-type: none;
-}
-
-.listaMenu li{
-    display: inline;
-}
-
-.logoIglesiaMenu{
-    font-size: 17pt;
-    font-weight: bold;
-    padding: 0 40px;
-}
-
-.listaMenu{
-    margin-right: 40px;
-    display: flex;
-}
-
-.menuIteam:hover, .resaltable{
-    background-color: #0d47a1;
-    transition: 0.5s;
-}
-
-.menuIteam{
-    padding: 8px 12px;
-}
-
-.botonBarra{
-    color: white;
-    background: none;
-    border: none;
-    font-size: 17pt;
-    display: none;
-}
-
-/*------------------Pie de pagina-----------------------*/
-.piePagina{
-    background-color: #273f63;
-    display: grid;
-    grid-template-columns: 10% 30% 30%;
-    justify-content: space-evenly;
-    align-content: center;
-}
-
-#imgLogo{
-    width: 100%;
-}
-
-.borderEsp{
-    border-left: 2px white dotted;
-    padding: 7% 0;
-}
-
-.pieSubt{
-    color: white;
-    font-weight: bold;
-    margin: 2%;
-    text-align: center;
-}
-
-.direcciones{
-    list-style-type: disc;
-}
-
-.direcciones li{
-    color: white;
-}
-
-.pieLista{
-    color: white;
-    text-decoration: none;
-
-}
-
-.pieLista:hover{
-    text-decoration: underline;
-}
-
-.gap{
-    height: 10%;
-    grid-column: 1/4;
-    color:#273f63;
-   margin: 0.5%;
-}
-
 /*------------------ContenidoPrincipal------------------*/
 .elementosBlancos{
     color: white;
@@ -408,63 +293,6 @@ ul{
     .contenedorPrincipalInformacion, #contenedorPrincipalSobreNosotros{
         margin-top: 60px;
     }
-    
-    .barraNavegacion{
-        height: 60px;
-    }
-    
-    .barraNavegacion a{
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-    }
-    
-    .logoIglesia{
-        font-size: 12pt;
-    }
-    
-    /*Aquí para acomodar el menu*/
-    .listaMenu{
-        flex-direction: column;
-        background-color: rgba(13, 71, 161, 0.6);
-        position: fixed;
-        left: 0;
-        top: 59px;
-        width: 100%;
-        
-        left: 100%;
-        transition: left 0.3s;
-    }
-    
-    .menuIteam:hover{
-        background-color: #A9D6E5;
-        color: black;
-    }
-
-    .botonBarra{
-        display: block;
-    }
-
-    .menuDesplegable{
-        left: 0;
-    }
-
-    .listaMenu li{
-        display: block;
-        width: 100%;
-    }
-
-    .listaMenu ul{
-        padding: 0;
-    }
-
-    .barraNavegacion a{
-        width: 100%;
-    }    
-
-    .menuIteam:hover, .resaltable{
-        background-color: #0d48a100;
-    }
 }
 
 /*---------------------Index-------------------------*/
@@ -496,11 +324,6 @@ ul{
         flex-direction: column;
         margin: 10px 5px;
     }
-
-    .piePagina{
-        grid-template-columns: 20% 35% 35%;
-    }
-
 }
 
 @media screen and (max-width: 545px){
