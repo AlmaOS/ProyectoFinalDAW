@@ -58,7 +58,7 @@ input{
     background-color: #e3f2fd;
 }
 
-#boton{
+#guardar{
     background-color: #0d47a1;
     color: white;
     padding: 1%;
@@ -66,7 +66,7 @@ input{
     border: none;
 }
 
-#boton:hover{
+#guardar:hover{
     background-color: #A9D6E5;
     border: none;
 }
