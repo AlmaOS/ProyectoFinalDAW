@@ -1,5 +1,4 @@
 function validarAsistencia(form){
-    console.log(form.fecha.value);
     if(form.fecha.value==""){
         alert("No seleccionó la fecha");
         form.fecha.focus();
