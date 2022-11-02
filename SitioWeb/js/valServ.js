@@ -7,34 +7,34 @@ function validarServicios(form){
 
     if(form.niños.value==""){
         alert("Cantidad de niños inválida");
-        form.niños.focus();
+        form.niños.select();
         return false;
     }
     if(isNaN(form.niños.value)){
         alert("Cantidad de niños inválida");
-        form.niños.focus();
+        form.niños.select();
         return false;
     }
 
     if(form.prejuveniles.value==""){
         alert("Cantidad de prejuveniles inválida");
-        form.prejuveniles.focus();
+        form.prejuveniles.select();
         return false;
     }
     if(isNaN(form.prejuveniles.value)){
         alert("Cantidad de prejuveniles inválida");
-        form.prejuveniles.focus();
+        form.prejuveniles.select();
         return false;
     }
 
     if(form.adultos.value==""){
         alert("Cantidad de adultos inválida");
-        form.adultos.focus();
+        form.adultos.select();
         return false;
     }
     if(isNaN(form.adultos.value)){
         alert("Cantidad de adultos inválida");
-        form.adultos.focus();
+        form.adultos.select();
         return false;
     }
 

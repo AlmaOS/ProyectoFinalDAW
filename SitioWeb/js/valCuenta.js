@@ -1,42 +1,42 @@
 function validarCuenta(form){
     if(form.nombre.value==""){
         alert("Nombre inválido");
-        form.nombre.focus();
+        form.nombre.select();
         return false;
     }
     if(form.apellidoP.value==""){
         alert("Apellido paterno inválido");
-        form.apellidoP.focus();
+        form.apellidoP.select();
         return false;
     }
     if(form.apellidoM.value==""){
         alert("Apellido materno inválido");
-        form.apellidoM.focus();
+        form.apellidoM.select();
         return false;
     }
     if(form.celular.value==""){
         alert("Celular inválido");
-        form.celular.focus();
+        form.celular.select();
         return false;
     }
     if(isNaN(form.celular.value)){
         alert("Celular inválido");
-        form.celular.focus();
+        form.celular.select();
         return false;
     }
     if(form.edad.value==""){
         alert("Edad inválida");
-        form.edad.focus();
+        form.edad.select();
         return false;
     }
     if(isNaN(form.edad.value)){
         alert("Edad inválida");
-        form.edad.focus();
+        form.edad.select();
         return false;
     }else{
         if(form.edad.value>90||form.edad.value<1){
             alert("Edad inválida");
-            form.edad.focus();
+            form.edad.select();
             return false;
         }
     }

@@ -7,23 +7,23 @@ function validarRecauds(form){
 
     if(form.ofrendas.value==""){
         alert("Cantidad de ofrendas inválida");
-        form.ofrendas.focus();
+        form.ofrendas.select();
         return false;
     }
     if(isNaN(form.ofrendas.value)){
         alert("Cantidad de ofrendas inválida");
-        form.ofrendas.focus();
+        form.ofrendas.select();
         return false;
     }
 
     if(form.diezmo.value==""){
         alert("Cantidad de diezmo inválida");
-        form.diezmo.focus();
+        form.diezmo.select();
         return false;
     }
     if(isNaN(form.diezmo.value)){
         alert("Cantidad de diezmo inválida");
-        form.diezmo.focus();
+        form.diezmo.select();
         return false;
     }
 }
