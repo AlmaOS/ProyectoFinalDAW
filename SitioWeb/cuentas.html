@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Cuentas</title>
     <link rel="stylesheet" href="css/formStyle.css">
+    <script src="js/valCuenta.js"></script>
 </head>
 <body>
   <div>
@@ -15,14 +16,15 @@
     </div>
     <div class="content">
       <div class="form">
-        <form>
+        <form name="Fcuenta">
           Nombre:<input type="text" name="nombre">
           <br>*Si se tienen dos nombres, ingresar ambos<br><br>
-          Apellido paterno: <input type="text" name="apellidoM"><br><br>
+          Apellido paterno: <input type="text" name="apellidoP"><br><br>
           Apellido materno: <input type="text" name="apellidoM"><br><br>
           Celular: <input type="text" name="celular"><br><br>
           Edad: <input type="text" name="edad"><br><br>
           Grupo: <select name="grupos">
+                    <option value=""></option>
                     <option value="Iglekids">Iglekids</option>
                     <option value="Matrimonios">Matrimonios</option>
                     <option value="Jovenes">Jóvenes</option>
@@ -33,7 +35,7 @@
           <br><br>Posición:
           <input type="radio" name="posicion" value="lider">Líder
           <input type="radio" name="posicion" value="Integrante">Integrante
-          <br><br><br><input type="button" id="boton" value="Guardar">
+          <br><br><br><input type="button" id="guardar" value="Guardar">
         </form>
       </div>
     </div>
