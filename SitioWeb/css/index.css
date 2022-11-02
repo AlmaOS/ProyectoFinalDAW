@@ -343,25 +343,6 @@ h2{
         justify-content: center;
     }
 
-    #imgLogo{
-        width: 50%;
-        padding-left: 25%;
-    }
-
-    .gap{
-        display: none;
-    }
-
-    .borderEsp{
-        border-left: none;
-        border-top: 2px white dotted;
-        margin: 0 5%;
-        padding-left: 10%;
-    }
-
-    .navPie{
-        padding-left: 25%;
-    }
 }
 
 @media screen and (max-width: 417px){
@@ -390,15 +371,6 @@ h2{
         width: 150px;
         margin: 10px 15px;
     }
-
-    .logoIglesiaMenu{
-        padding: 0 20px;
-    }
-
-    .borderEsp{
-        padding:2% 6%;
-    }
-
 }
 
 @media screen and (max-width: 321px){
@@ -413,18 +385,8 @@ h2{
         margin: 10px 15px;
     }
 
-    .logoIglesiaMenu{
-        font-size: 17pt;
-        font-weight: bold;
-        padding: 0 5px;
-    }
-
     #mapa{
         width:300px; height:200px;
-    }
-
-    .borderEsp{
-        padding: 3% 3%;
     }
 }
 
