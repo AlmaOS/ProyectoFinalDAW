@@ -54,51 +54,6 @@ body{
     display: none;
 }
 
-@media screen and (max-width: 765px){
-    body{
-        background-color: red;
-    }
-
-    .barraNavegacion{
-        height: 60px;
-    }
-
-    .barraNavegacion a{
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .logoIglesia{
-        font-size: 12pt;
-    }
-
-    /*Aquí para acomodar el menu*/
-    .listaMenu{
-        flex-direction: column;
-        background-color: #0d47a1;
-        position: fixed;
-        left: 0;
-        top: 59px;
-        width: 100%;
-
-        left: 100%;
-        transition: left 0.3s;
-    }
-
-    .menuIteam:hover{
-        background-color: #A9D6E5;
-        color: black;
-    }
-
-    .botonBarra{
-        display: block;
-    }
-
-    .menuDesplegable{
-        left: 0;
-    }
-}
 
 /*------------------Contenido Contacto------------------*/
 
@@ -269,3 +224,105 @@ hr{
     opacity: 50%;
 }
 
+@media screen and (min-width: 766px) and (max-width: 1050px){
+    .contenedor-form{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 10% 10% 10% auto 10% 15%;
+        row-gap: 4%;
+        height: 90%;
+        width: 95%;
+        grid-template-areas: "titulo-form"
+                         "input1"
+                         "input2"
+                         "input3"
+                         "input4"
+                         "input5"
+                         "boton-form";
+    }
+}
+
+@media screen and (max-width: 765px){
+    body{
+        background-color: white;
+    }
+
+    .barraNavegacion{
+        height: 60px;
+    }
+
+    .barraNavegacion a{
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .logoIglesia{
+        font-size: 12pt;
+    }
+
+    /*Aquí para acomodar el menu*/
+    .listaMenu{
+        flex-direction: column;
+        background-color: #0d47a1;
+        position: fixed;
+        left: 0;
+        top: 59px;
+        width: 100%;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .menuIteam:hover{
+        background-color: #A9D6E5;
+        color: black;
+    }
+
+    .botonBarra{
+        display: block;
+    }
+
+    .menuDesplegable{
+        left: 0;
+    }
+
+    .contenedor-form{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 10% 10% 10% auto 10% 15%;
+        row-gap: 4%;
+        height: 90%;
+        width: 95%;
+        grid-template-areas: "titulo-form"
+                         "input1"
+                         "input2"
+                         "input3"
+                         "input4"
+                         "input5"
+                         "boton-form";
+    }
+}
+
+@media screen and (max-width: 700px){
+    .contenedorPrincipal{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "colum-form"
+                              "colum-info";
+    }
+
+    .colum-info{
+        background-color: midnightblue;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 20% auto 20%;
+        padding: 7%;
+    }
+
+    header{
+        font-size: xx-large;
+    }
+}
