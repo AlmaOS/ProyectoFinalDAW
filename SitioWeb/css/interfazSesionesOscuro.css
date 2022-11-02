@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #001845;
 }
 
 a{
@@ -9,23 +10,23 @@ a{
 
 .header{
     display: flex;
-    background-color: #273f63;
+    background-color: #023E7D;
     justify-content: space-between;
     align-content: center;
 }
 
 .salir{
-    background-color: #0d47a1;
-    font-family: "Century Gothic", Calibri;
+    background-color: #002855;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color:#38b6ff;
+    color:#023E7D;
     text-align: center;
     font-size: 20px;
     padding: 3% 5%;
 }
 
 .salir:hover{
-    color: #273f63;
+    color: white;
 }
 
 .logo{
@@ -57,7 +58,7 @@ img{
 
 .ícono{
     display: flex;
-    background-color: #002855;
+    background-color: #023E7D;
     width: 8%;
     padding: 5%;
     border-radius: 20%;
@@ -68,13 +69,29 @@ img{
 
 .txtIcon{
     text-align: center;
-    font-family: "Century Gothic", Calibri;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-weight: bold;
 }
 
 .txtIcon:hover{
     color: white;
+}
+
+.footer{
+    display: flex;
+    justify-content: right;
+    margin: 5%;
+}
+
+#bModo{
+    background-color: #023E7D;
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 1050px){
