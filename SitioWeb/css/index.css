@@ -189,6 +189,8 @@ h2{
     box-sizing: border-box;
     font-size: 18pt;
     font-weight: bold;
+    padding: 0 40px;
+    
 }
 
 .contenedorTexto{
@@ -470,4 +472,3 @@ h2{
         padding: 0 50px;
     }
 }
-
