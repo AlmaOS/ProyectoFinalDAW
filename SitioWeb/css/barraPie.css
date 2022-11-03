@@ -21,6 +21,7 @@
 .barraNavegacion a{
     color: white;
     display: inline-block;
+    text-decoration: none;
 }
 
 .barraNavegacion > div{
@@ -78,7 +79,7 @@ ul{
 
 .borderEsp{
     border-left: 2px white dotted;
-    padding: 7% 0;
+    padding: 7% 7%;
 }
 
 .pieSubt{
