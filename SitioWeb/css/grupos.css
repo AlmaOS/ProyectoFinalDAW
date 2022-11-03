@@ -132,6 +132,65 @@ p{
     text-align: center;
 }
 
+/*------------------Pie de página------------------*/
+
+.piePagina{
+    background-color: #273f63;
+    display: grid;
+    grid-template-columns: 10% 30% 30%;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+#imgLogo{
+    width: 100%;
+}
+
+.borderEsp{
+    border-left: 2px white dotted;
+    padding: 7% 0;
+}
+
+.pieSubt{
+    color: white;
+    font-weight: bold;
+    margin: 2%;
+    text-align: center;
+}
+
+.direcciones{
+    list-style-type: disc;
+}
+
+.direcciones li{
+    color: white;
+}
+
+.navPie{
+    list-style-type: none;
+}
+
+.pieLista{
+    color: white;
+    text-decoration: none;
+}
+
+.pieLista:hover{
+    text-decoration: underline;
+}
+
+.gap{
+    height: 10%;
+    grid-column: 1/4;
+    color:#273f63;
+    margin: 0.5%;
+}
+
+@media screen and (max-width: 870px){
+    .piePagina{
+        grid-template-columns: 20% 35% 35%;
+    }
+}
 
 @media screen and (max-width: 765px){
     body{
@@ -195,5 +254,45 @@ p{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(12,1fr);
+    }
+}
+
+@media screen and (max-width: 545px){
+    .piePagina{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #imgLogo{
+        width: 50%;
+        padding-left: 25%;
+    }
+
+    .gap{
+        display: none;
+    }
+
+    .borderEsp{
+        border-left: none;
+        border-top: 2px white dotted;
+        margin: 0 5%;
+        padding-left: 10%;
+    }
+
+    .navPie{
+        padding-left: 25%;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 364px){
+    .borderEsp{
+        padding:2% 6%;
+    }
+}
+
+@media screen and (max-width: 321px){
+    .borderEsp{
+        padding: 3% 3%;
     }
 }
