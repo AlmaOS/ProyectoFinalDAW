@@ -1,0 +1,472 @@
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+h2{
+    margin-top: 10px;
+}
+
+/*------------------ContenidoPrincipal------------------*/
+.elementosBlancos{
+    color: white;
+}
+
+.contenedorPrincipalInformacion{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+#imagenPrincipalIndex{
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+}
+
+.segundoContenedorIndex{
+    background-color: #33415c;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+
+#MVI{
+    width: 350px;
+    height: 166px;
+}
+
+#tercerContenedorIndex{
+    background-color: #bbdefb;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+
+.contenedoresTerciariosIndex{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 13pt;
+}
+
+.imagenesTercerContenedor{
+    margin: 10px 40px;
+    height: 250px;
+    width: 850px;
+}
+
+.textoTercerContenedor{
+    margin: 10px 40px;
+    width: 850px;
+    background-color: #273f63;
+    text-align: center;
+}
+
+#cuartoContenedorIndex{
+    background-color: #273f63;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+
+#cuartoContenedorIndex img{
+    width: 25px;
+    height: 25px;
+}
+
+#cuartoContenedorIndex img[class="logoIglesia"]{
+    width: 50px;
+    height: 50px;
+}
+
+.logoIglesia{
+    width: 100px;
+    height: 100px;
+}
+
+#tituloPrincipalCuartoContenedor{
+    width: 100%;
+    margin: 0 0 25px;
+    border-bottom: solid white;
+}
+
+#mapa{
+    width:350px; height:200px;
+}
+
+#quintoContenedor{
+    background-color: white;
+}
+
+.aux{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.cuadrosOpcionesQuintoContenedor{
+    width: 250px;
+    height: 400px;
+    background-color: #0d47a1;
+    margin: 25px 40px;
+    font-size: 13pt;
+    border-radius: 10px;
+
+    text-align: center;
+    align-items: center;
+
+    transition: 0.25s;
+}
+
+#quintoContenedor .cuadrosOpcionesQuintoContenedor:hover{
+    transform: scale(1.15);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.347);
+    
+}
+
+.textoJustificadoDiv{
+    text-align: justify;
+}
+
+/*divs que están dentro de cuadrosOpcionesQuintoContenedor */
+.recuadrosOpcionesQuintoContenedor{
+    background-color: #002855;
+    font-size: 18pt;
+    width: 200px;
+    height: 150px;
+    margin: 40px 25px 100px 25px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.botonQuintoContenedor{
+    background-color: #e3f2fd;
+    border: 2px solid #e3f2fd;
+    width: 200px;
+    padding: 15px 32px;
+    color: #737373;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12pt;
+    box-sizing: border-box;
+}
+
+.botonQuintoContenedor:hover{
+    transition: 0.25s;
+    background-color: #273f63;
+    border: 2px solid #273f63;
+    color: white;
+}
+
+.contenedoresSecundariosIndex{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.contenedoresSecundariosIndex div{
+    margin: 10px 40px;
+    font-size: 13pt;
+    color: white;
+}
+
+/*-----------------Sobre nosotros--------------------------*/
+
+#primerContenedorSobNos{
+    background-repeat: repeat;
+    width: 100%;
+    background-image: url("../img/color.jpg");
+    text-align: center;
+    padding: 125px 40px;
+    box-sizing: border-box;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.contenedorTexto{
+    font-size: 12pt;
+    color: white;
+    margin: 10px 0;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+#tercercontenedorSB{
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 15px 0;
+}
+
+.lideresIglesiaCuadro{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    width: 300px;
+    height: 250px;
+}
+
+.imagenTercerContenedor{
+    width: 150px;
+}
+
+#contenedorTercerContenedor{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cuadrosTercerContenedorSN .tex, .parrafo{
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.titulos1, .titulos2{
+    width: 50%;
+    margin-left: 25%;
+    border-bottom: solid white;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.titulos2{
+    border-bottom: solid #0d47a1;
+    color: #002855;
+}
+
+.titulos3{
+    color: #273f63;
+    margin-bottom: 10px;
+}
+
+.contenedorGenericoSN{
+    display: flex;
+    width: 100%;
+    background-color: #002855;
+}
+
+.contenedorGenericoSN2{
+    background-color: #bbdefb;
+}
+
+.subContenedorGenerico1{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px 0px;
+}
+
+.subContenedorGenerico2{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 50px;
+    justify-content: center;
+}
+
+.parrafo{
+    text-align: justify;
+    color: white;
+}
+
+.parrafoNegro{
+    color: black;
+}
+
+/*-----------------Configuraciones para pantallas----------*/
+/*-----------------Barra de navegacion---------------------*/
+/*Cambio cuando sea menos de 807*/
+@media screen and (max-width: 807px){
+    body{
+        background-color: white;
+    }
+
+    .contenedorPrincipalInformacion, #contenedorPrincipalSobreNosotros{
+        margin-top: 60px;
+    }
+}
+
+/*---------------------Index-------------------------*/
+/*Cambio cuando sea menos de 870*/
+@media screen and (max-width: 870px){
+    .contenedoresSecundariosIndex{
+        flex-direction: column;
+    }
+
+    .imagenesTercerContenedor{
+        height: 250px;
+        width: 350px;
+    }
+
+    #tercerContenedorIndex{
+        flex-direction: row;
+    }
+
+    .textoTercerContenedor{
+        margin: 0;
+        width: auto;
+    }
+
+    .contenedoresSecundariosIndex div{
+        margin: 10px 15px;
+    }
+
+    .contenedoresTerciariosIndex{
+        flex-direction: column;
+        margin: 10px 5px;
+    }
+}
+
+@media screen and (max-width: 545px){
+    .imagenesTercerContenedor{
+        height: 150px;
+        width: 250px;
+        margin: 10px 15px;
+    }
+
+    .contenedoresTerciariosIndex{
+        font-size: 12pt;
+    }
+
+    .piePagina{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 417px){
+    .contenedoresTerciariosIndex{
+        font-size: 11pt;
+    }
+}
+
+/*De 481 hasta 775*/
+@media screen and (min-width: 321px) and (max-width: 364px){
+    #MVI{
+        width: 270px;
+        height: 120px;
+    }
+
+    #mapa{
+        width:300px; height:200px;
+    }
+
+    .contenedoresTerciariosIndex{
+        font-size: 11pt;
+    }
+    
+    .imagenesTercerContenedor{
+        height: 100px;
+        width: 150px;
+        margin: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 321px){
+    #MVI{
+        width: 250px;
+        height: 100px;
+    }
+
+    .imagenesTercerContenedor{
+        height: 100px;
+        width: 150px;
+        margin: 10px 15px;
+    }
+
+    #mapa{
+        width:300px; height:200px;
+    }
+}
+
+/*De 481 hasta 775*/
+@media screen and (min-width: 806px) and (max-width: 927px){
+    .cuadrosOpcionesQuintoContenedor{
+        width: 250px;
+        height: 400px;
+        margin: 25px 10px;
+    }
+    
+    /*divs que están dentro de cuadrosOpcionesQuintoContenedor */
+    .recuadrosOpcionesQuintoContenedor{
+        font-size: 18pt;
+        width: 200px;
+        height: 150px;
+        margin: 40px 25px 100px 25px;
+    }
+    
+    .botonQuintoContenedor{
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 585px) and (max-width: 807px){
+    
+    .cuadrosOpcionesQuintoContenedor{
+        width: 180px;
+        height: 400px;
+        margin: 25px 5px;
+    }
+    
+    /*divs que están dentro de cuadrosOpcionesQuintoContenedor */
+    .recuadrosOpcionesQuintoContenedor{
+        font-size: 15pt;
+        width: 140px;
+        height: 150px;
+        margin: 40px 25px 100px 25px;
+    }
+    
+    .botonQuintoContenedor{
+        width: 140px;
+    }
+}
+
+
+
+@media screen and (max-width: 585px){
+    .aux{
+        flex-direction: column;
+        align-items: center;
+    }
+ /*puse sobre nosotros aquí*/
+    #contenedorTercerContenedor{
+        flex-direction: column;
+    }
+
+    .contenedorGenericoSN{
+        flex-direction: column;
+    }
+
+    .subContenedorGenerico1{
+        width: 100%;
+    }
+    
+    .subContenedorGenerico2{
+        display: flex;
+        width: 100%;
+    }
+
+
+}
+
+/*De 481 hasta 775*/
+@media screen and (min-width: 585px) and (max-width: 831px){
+    #contenedorTercerContenedor{
+        flex-direction: column;
+    }
+
+    .cuadrosTercerContenedorSN .tex, .parrafo{
+        padding: 0 50px;
+    }
+}

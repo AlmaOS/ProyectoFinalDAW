@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+/*------------------Contenido Grupos------------------*/
+
+
+header{
+    background-image: url("../img/header-grupos.png");
+    margin-top: 60px;
+    width: 100%;
+    height: 220px;
+}
+
+.contenedor-gal{
+    width: 100%;
+    height: 600px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15%;
+    row-gap: 0;
+    background-color: #33415c;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 50% 50%;
+}
+
+.img-menu{
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+.img-menu:hover {
+    -webkit-transform:scale(1.3);transform:scale(1.3);
+}
+
+.contenedor-grupos{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.bg-decoration{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    background: #4188aa;
+    --mask:
+            linear-gradient(to left,#0000 42px,#000 0),
+            radial-gradient(42px,#000 98%,#0000) right/84px 77.70px;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.contenido-grupos{
+    background-color: white;
+    align-items: center;
+    text-align: center;
+    padding: 3%;
+}
+
+hr{
+    width: 60%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-color: #0d47a1;
+}
+
+h2{
+    color: #0d47a1;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+p{
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 765px){
+    .contenedor-gal{
+        width: 100%;
+        height: 600px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        column-gap: 15%;
+        row-gap: 0;
+        background-color: #33415c;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    .contenedor-grupos{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12,1fr);
+    }
+}
+
