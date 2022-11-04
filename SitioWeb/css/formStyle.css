@@ -71,6 +71,23 @@ input{
     border: none;
 }
 
+label{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    margin-left: 40%;
+}
+
+.check{
+    width: 18px;
+    height: 18px;
+}
+
+.checkConte{
+    text-align: left;
+}
+
 @media screen and (max-width: 1200px) {
     .logo{
         width: 15%;
@@ -108,5 +125,11 @@ input{
 
     .headTxt{
         padding: 11% 0;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    label{
+        margin-left: 20%;
     }
 }
