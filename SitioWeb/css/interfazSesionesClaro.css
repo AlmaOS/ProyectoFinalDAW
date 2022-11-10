@@ -25,7 +25,7 @@ a{
 }
 
 .salir:hover{
-    color: #273f63;
+    color: white;
 }
 
 .logo{
@@ -66,15 +66,24 @@ img{
 
 }
 
+.imgIcon{
+    font-size: 100px;
+    color: white;
+}
+
+.imgIcon:hover{
+    color:#0d47a1;
+}
+
 .txtIcon{
     text-align: center;
     font-family: "Century Gothic", Calibri;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 .txtIcon:hover{
-    color: white;
+    color: #0d47a1;
 }
 
 .footer{
@@ -125,5 +134,9 @@ img{
 
     .ícono{
         width: 35%;
+    }
+
+    .imgIcon{
+        size: 80px;
     }
 }
