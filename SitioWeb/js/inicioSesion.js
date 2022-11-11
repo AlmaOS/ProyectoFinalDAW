@@ -16,7 +16,7 @@ window.onload = function (){
             document.getElementById("contrasena").focus();
             return false;
         }
-
+        return true;
     }
 
 }
