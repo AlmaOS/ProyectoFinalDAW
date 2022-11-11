@@ -107,6 +107,7 @@ ul{
 }
 
 .pieLista:hover{
+    color:white;
     text-decoration: underline;
 }
 
