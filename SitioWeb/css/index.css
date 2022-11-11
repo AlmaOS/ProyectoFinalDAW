@@ -202,9 +202,9 @@ p{
     font-size: 12pt;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     color: white;
-    margin: 10px 0;
+    margin: 30px 0;
     text-align: justify;
-    padding: 0 20px;
+    padding: 0 70px;
 }
 
 #tercercontenedorSB{
@@ -213,6 +213,7 @@ p{
     text-align: center;
     box-sizing: border-box;
     padding: 15px 0;
+    margin: 20px 0;
 }
 
 .lideresIglesiaCuadro{
@@ -224,7 +225,7 @@ p{
 }
 
 .imagenTercerContenedor{
-    width: 150px;
+    width: 250px;
 }
 
 #contenedorTercerContenedor{
@@ -233,8 +234,8 @@ p{
     width: 100%;
 }
 
-.cuadrosTercerContenedorSN .tex, .parrafo{
-    padding: 0 100px;
+.cuadrosTercerContenedorSN .tex{
+    padding: 0 130px;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     box-sizing: border-box;
 }
@@ -273,7 +274,7 @@ p{
 .subContenedorGenerico1{
     width: 50%;
     box-sizing: border-box;
-    padding: 10px 0px;
+    padding: 20px 0px;
 }
 
 .subContenedorGenerico2{
@@ -288,6 +289,9 @@ p{
 .parrafo{
     text-align: justify;
     color: white;
+    padding: 0 100px;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    box-sizing: border-box;
 }
 
 .parrafoNegro{
@@ -400,6 +404,10 @@ p{
     #mapa{
         width:300px; height:200px;
     }
+
+    .cuadrosTercerContenedorSN .tex{
+        padding: 0 60px;
+    }
 }
 
 /*De 481 hasta 775*/
@@ -420,6 +428,10 @@ p{
     
     .botonQuintoContenedor{
         width: 200px;
+    }
+
+    .cuadrosTercerContenedorSN .tex{
+        padding: 0 60px;
     }
 }
 
