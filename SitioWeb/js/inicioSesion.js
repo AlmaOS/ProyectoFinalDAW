@@ -9,14 +9,16 @@ window.onload = function (){
     document.getElementById("iniciarSesion").onclick = function (){
         if (document.getElementById("usuario").value === "" ) {
             document.getElementById("usuario").focus();
+            alert("Usuario vacío");
             return false;
         }
 
         if (document.getElementById("contrasena").value === "" ) {
             document.getElementById("contrasena").focus();
+            alert("Contraseña vacía");
             return false;
         }
-
+        return true;
     }
 
 }

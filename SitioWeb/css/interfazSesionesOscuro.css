@@ -19,14 +19,14 @@ a{
     background-color: #002855;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color:#023E7D;
+    color: white;
     text-align: center;
     font-size: 20px;
     padding: 3% 5%;
 }
 
 .salir:hover{
-    color: white;
+    color: #0d47a1;
 }
 
 .logo{
@@ -67,15 +67,24 @@ img{
 
 }
 
+.imgIcon{
+    font-size: 100px;
+    color: white;
+}
+
+.imgIcon:hover{
+    color:#001845;
+}
+
 .txtIcon{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 .txtIcon:hover{
-    color: white;
+    color: #001845;
 }
 
 .footer{

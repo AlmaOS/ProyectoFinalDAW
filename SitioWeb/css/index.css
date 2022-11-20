@@ -1,7 +1,8 @@
 /*https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_website2*/
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Bad+Script&display=swap');
 *{
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     text-decoration: none;
 }
 
@@ -67,6 +68,9 @@ h2{
     width: 850px;
     background-color: #273f63;
     text-align: center;
+    padding: 10px 0;
+    border-radius: 15px;
+    opacity: 0.8;
 }
 
 #cuartoContenedorIndex{
@@ -122,16 +126,20 @@ h2{
     align-items: center;
 
     transition: 0.25s;
+
+    opacity: 0.7;
 }
 
 #quintoContenedor .cuadrosOpcionesQuintoContenedor:hover{
     transform: scale(1.15);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.347);
+    opacity: 1;
     
 }
 
 .textoJustificadoDiv{
     text-align: justify;
+    padding: 15px 60px;
 }
 
 /*divs que están dentro de cuadrosOpcionesQuintoContenedor */
@@ -178,6 +186,56 @@ h2{
     color: white;
 }
 
+p{
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 100px;
+  }
+
+  .button:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0cf;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+
+  .button:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #008fb3;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .button:hover {
+    color: #fff;
+  }
+  .button:hover:before {
+    width: 100%;
+  }
+
 /*-----------------Sobre nosotros--------------------------*/
 
 #primerContenedorSobNos{
@@ -189,14 +247,17 @@ h2{
     box-sizing: border-box;
     font-size: 18pt;
     font-weight: bold;
+    /*font-family: 'Bad Script', cursive;*/
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
 .contenedorTexto{
     font-size: 12pt;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     color: white;
-    margin: 10px 0;
+    margin: 30px 0;
     text-align: justify;
-    padding: 0 20px;
+    padding: 0 70px;
 }
 
 #tercercontenedorSB{
@@ -205,6 +266,7 @@ h2{
     text-align: center;
     box-sizing: border-box;
     padding: 15px 0;
+    margin: 20px 0;
 }
 
 .lideresIglesiaCuadro{
@@ -216,7 +278,7 @@ h2{
 }
 
 .imagenTercerContenedor{
-    width: 150px;
+    width: 250px;
 }
 
 #contenedorTercerContenedor{
@@ -225,8 +287,9 @@ h2{
     width: 100%;
 }
 
-.cuadrosTercerContenedorSN .tex, .parrafo{
-    padding: 0 100px;
+.cuadrosTercerContenedorSN .tex{
+    padding: 0 130px;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     box-sizing: border-box;
 }
 
@@ -236,15 +299,18 @@ h2{
     border-bottom: solid white;
     color: white;
     margin-bottom: 15px;
+    font-family: 'Asap Condensed', sans-serif;
 }
 
 .titulos2{
     border-bottom: solid #0d47a1;
+    font-family: 'Asap Condensed', sans-serif;
     color: #002855;
 }
 
 .titulos3{
     color: #273f63;
+    font-family: 'Asap Condensed', sans-serif;
     margin-bottom: 10px;
 }
 
@@ -261,7 +327,7 @@ h2{
 .subContenedorGenerico1{
     width: 50%;
     box-sizing: border-box;
-    padding: 10px 0px;
+    padding: 20px 0px;
 }
 
 .subContenedorGenerico2{
@@ -276,6 +342,9 @@ h2{
 .parrafo{
     text-align: justify;
     color: white;
+    padding: 0 100px;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    box-sizing: border-box;
 }
 
 .parrafoNegro{
@@ -349,6 +418,11 @@ h2{
     .contenedoresTerciariosIndex{
         font-size: 11pt;
     }
+
+    .textoTercerContenedor{
+        font-size: 8pt;
+        padding: 10px 10px;
+    }
 }
 
 /*De 481 hasta 775*/
@@ -388,6 +462,16 @@ h2{
     #mapa{
         width:300px; height:200px;
     }
+
+    .cuadrosTercerContenedorSN .tex{
+        padding: 0 60px;
+    }
+}
+
+@media screen and (max-width: 1039px){
+    .cuadrosTercerContenedorSN .tex{
+        padding: 0 60px;
+    }
 }
 
 /*De 481 hasta 775*/
@@ -408,6 +492,10 @@ h2{
     
     .botonQuintoContenedor{
         width: 200px;
+    }
+
+    .cuadrosTercerContenedorSN .tex{
+        padding: 0 60px;
     }
 }
 
