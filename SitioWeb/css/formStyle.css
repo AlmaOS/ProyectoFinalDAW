@@ -133,3 +133,9 @@ label{
         margin-left: 20%;
     }
 }
+
+@media print{
+    body{
+        display: none;
+    }
+}

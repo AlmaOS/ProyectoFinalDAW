@@ -507,3 +507,33 @@ p{
         padding: 0 50px;
     }
 }
+
+@media print{
+    #quintoContenedor{
+        display: none;
+    }
+
+    .page{
+        display: none;
+    }
+
+    #primerContenedorSobNos{
+        display: none;
+    }
+
+    #contenedorTercerContenedor{
+        display: block;
+    }
+
+    .imagenTercerContenedor{
+        float: left;
+    }
+
+    .subContenedorGenerico1{
+        width: 100%;
+    }
+
+    .subContenedorGenerico2{
+        display: none;
+    }
+}

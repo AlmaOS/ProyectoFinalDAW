@@ -178,6 +178,10 @@ hr{
     opacity: 50%;
 }
 
+.print{
+    display: none;
+}
+
 @media screen and (min-width: 766px) and (max-width: 1050px){
     .contenedor-form{
         display: grid;
@@ -257,5 +261,26 @@ hr{
 @media screen and (max-width: 807px){
     header{
         margin-top: 60px;
+    }
+}
+
+@media print{
+    header{
+        display: none;
+    }
+
+    .print{
+        display: block;
+        color: black;
+        font-weight: bold;
+        font-size: 20pt;
+    }
+
+    .colum-form{
+        display: none;
+    }
+
+    .redes{
+        display: none;
     }
 }

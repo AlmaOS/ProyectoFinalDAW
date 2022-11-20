@@ -112,3 +112,9 @@ a:hover{
     }
 
 }
+
+@media print{
+    body{
+        display: none;
+    }
+}

@@ -239,3 +239,13 @@ ul{
         padding: 0 5px;
     }
 }
+
+@media print{
+    .barraNavegacion{
+        display:none;
+    }
+
+    .piePagina{
+        display:none;
+    }
+}

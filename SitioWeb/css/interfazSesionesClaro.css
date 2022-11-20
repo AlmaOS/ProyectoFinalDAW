@@ -140,3 +140,9 @@ img{
         size: 80px;
     }
 }
+
+@media print{
+    body{
+        display: none;
+    }
+}
