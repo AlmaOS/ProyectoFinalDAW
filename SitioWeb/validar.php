@@ -4,6 +4,9 @@
         exit();
     }
 
+    $usu = filter_var($_REQUEST["usuario"], FILTER_SANITIZE_STRING);
+    $contra = filter_var($_REQUEST["contrasena"], FILTER_SANITIZE_STRING);
+
     include("variables.php");
 
     $conexion = mysqli_connect($servidor, $usuario, $contrasena, $basedatos);
@@ -11,7 +14,7 @@
         die("Fallo: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT 	NombreUsu, contrasena, Rol, Ministerio FROM usuario WHERE NombreUsu ='" . $_REQUEST["usuario"] . "' AND contrasena ='" . $_REQUEST["contrasena"] . "'";
+    $sql = "SELECT 	NombreUsu, contrasena, Rol, Ministerio FROM usuario WHERE NombreUsu ='" . $usu . "' AND contrasena ='" . $contra . "'";
     $resultado = mysqli_query($conexion, $sql);
     mysqli_close($conexion);
 
