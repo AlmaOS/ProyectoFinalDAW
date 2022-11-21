@@ -31,20 +31,24 @@ function SetCookie(name, value, expires) {
 }
 
 function getCookie(name) {
-    var lista = document.cookie.split(";");
-         for (i in lista) {
-             var busca = lista[i].search(name);
-             if (busca > -1) {micookie=lista[i]}
-             }
-         var igual = micookie.indexOf("=");
-         var valor = micookie.substring(igual+1);
-    return valor;
+    if(document.cookie){
+        var lista = document.cookie.split(";");
+            for (i in lista) {
+                var busca = lista[i].search(name);
+                if (busca > -1) {micookie=lista[i]}
+                }
+            var igual = micookie.indexOf("=");
+            var valor = micookie.substring(igual+1);
+        return valor;
+    }else{
+        return "";
+    }
 }
 
 window.onload=function(){
     asignarModo();
-    //modo = document.getElementById("bModo").value;
+    modo = document.getElementById("bModo").value;
     document.getElementById("bModo").onclick=function () {
-        cambiarModo(this.value);
+        cambiarModo(modo);
     }
 }
