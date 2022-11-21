@@ -2,5 +2,5 @@
         session_start();
         session_unset();
         session_destroy();
-        include("inicioSesion.php");
+        include("../inicioSesion.php");
 ?>

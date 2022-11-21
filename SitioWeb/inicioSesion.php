@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width">
     <title>Inicio de Sesión</title>
     <link rel="shortcut icon" href="img/logoIcono.ico">
-    <link rel="stylesheet" href="css/inicioSesion.css">
-    <link rel="stylesheet" href="css/barraPie.css">
+    <link rel="stylesheet" href="../css/inicioSesion.css">
+    <link rel="stylesheet" href="../css/barraPie.css">
     <script src="https://kit.fontawesome.com/32587f35af.js" crossorigin="anonymous"></script>
-    <script src="js/inicioSesion.js"></script>
+    <script src="../js/inicioSesion.js"></script>
   </head>
   <body>
     <nav class="barraNavegacion">
       <div id="primerDivConLogo">
-        <a href="index.html" class="logoIglesiaMenu">MANANTIAL DE VIDA</a>
-        <a href="#"><img src="img/logoIglesiaBlanco.png" alt="logo provisional" width="70px" height="70px"></a>
+        <a href="../index.html" class="logoIglesiaMenu">MANANTIAL DE VIDA</a>
+        <a href="#"><img src="../img/logoIglesiaBlanco.png" alt="logo provisional" width="70px" height="70px"></a>
       </div>
       <button class="botonBarra">
         <i class="fa-solid fa-bars"></i>
@@ -22,10 +22,10 @@
       <div class="listaMenu">
         <!--li.nav-menu-item*4>a.nav-menu-link-->
         <ul>
-          <li><a href="sobreNosotros.html" class="menuIteam">Sobre Nosotros</a></li>
-          <li><a href="contacto.html" class="menuIteam">Contacto</a></li>
-          <li><a href="grupos.html" class="menuIteam">Grupos</a></li>
-          <li><a href="inicioSesion.html" class="menuIteam resaltable">Inicio de Sesión</a></li>
+            <li><a href="../sobreNosotros.html" class="menuIteam">Sobre Nosotros</a></li>
+            <li><a href="../contacto.html" class="menuIteam">Contacto</a></li>
+            <li><a href="../grupos.html" class="menuIteam">Grupos</a></li>
+            <li><a href="redireccionar.php" class="menuIteam resaltable">Inicio de Sesión</a></li>
         </ul>
       </div>
     </nav>
@@ -33,7 +33,7 @@
     <main style="background-color: white;">
       <div class="contenedorPrincipal">
         <aside id="logoInicio">
-          <img class="logo-aside" src="img/logoAzul.jpeg" alt="logo de manantial de vida">
+          <img class="logo-aside" src="../img/logoAzul.jpeg" alt="logo de manantial de vida">
         </aside>
 
         <div id="formularioInicio">
@@ -56,7 +56,7 @@
 
     <div class="piePagina">
       <div class="gap">qqqq</div>
-      <div class="logo"><img id="imgLogo" src="img/logoIglesiaBlanco.png"></div>
+      <div class="logo"><img id="imgLogo" src="../img/logoIglesiaBlanco.png"></div>
       <div class="borderEsp"><p class="pieSubt">Sedes:</p><ul class="direcciones">
         <li><a class="pieLista" href="#">Iglesia Manantial de vida</a></li>
         <li><a class="pieLista" href="#">Iglesia Manantial de vida. Campus Mérida</a></li>
@@ -65,7 +65,7 @@
         <li><a class="pieLista" href="sobreNosotros.html" class="">Sobre Nosotros</a></li>
         <li><a class="pieLista" href="contacto.html" class="">Contacto</a></li>
         <li><a class="pieLista" href="grupos.html" class="">Grupos</a></li>
-        <li><a class="pieLista" href="inicioSesion.html" class="">Inicio de Sesión</a></li>
+        <li><a class="pieLista" href="Sesion/redireccionar.php" class="">Inicio de Sesión</a></li>
       </ul></div>
       <div class="gap">qqq</div>
     </div>
