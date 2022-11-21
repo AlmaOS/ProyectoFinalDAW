@@ -1,12 +1,11 @@
 function asignarModo() {
     var cadena;
     var estilo = getCookie("estilo");
-
     if ( estilo == "") {
-        cadena = "<link rel='stylesheet' href='css/interfazSesionesClaro.css'>"
+        cadena = "<link rel='stylesheet' href='css/interfazSesionesClaro"+".css"+"?cambio="+Math.floor(Math.random() * 10)+"'"+">"
         document.getElementById("bModo").value="Oscuro"
     } else {
-        cadena = "<link rel='stylesheet' href='css/interfazSesiones"+estilo+".css'>"
+        cadena = "<link rel='stylesheet' href='css/interfazSesiones"+estilo+".css?cambio="+Math.floor(Math.random() * 10)+"'"+">";
         if(estilo=="Oscuro"){
             document.getElementById("bModo").value="Claro";
         }else{
@@ -32,28 +31,20 @@ function SetCookie(name, value, expires) {
 }
 
 function getCookie(name) {
-    if(document.cookie){
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(";");
-        for(var i=0; i<ca.length; i++) {
-            var c = ca[i];
-            while(c.charAt(0)=="")
-                c = c.substring(1,c.length);
-            if( c.indexOf(nameEQ) == 0)
-                return c.substring(nameEQ.length, c.length);
-        }
-        return "";
-    }else{
-        return "";
-    }
-
+    var lista = document.cookie.split(";");
+         for (i in lista) {
+             var busca = lista[i].search(name);
+             if (busca > -1) {micookie=lista[i]}
+             }
+         var igual = micookie.indexOf("=");
+         var valor = micookie.substring(igual+1);
+    return valor;
 }
 
 window.onload=function(){
     asignarModo();
-    modo=document.getElementById("bModo").value;
+    //modo = document.getElementById("bModo").value;
     document.getElementById("bModo").onclick=function () {
-        cambiarModo(modo);
+        cambiarModo(this.value);
     }
 }
-
