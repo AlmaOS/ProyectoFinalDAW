@@ -1,4 +1,8 @@
 <?php
+//Cuando se de para ir a la página de iniciar sesión nos manda aquí
+// donde verificamos si hay sesion, si la hay vamos vemos a donde mandar al usuario, si no la hay
+//mandamos a inicio de sesion .html
+// https://www.youtube.com/watch?v=Tb-_cEAsp4s
     if (empty($_REQUEST["usuario"]) || empty($_REQUEST["contrasena"])) {
         header("location: index.php");
         exit();
@@ -24,20 +28,35 @@
     if ($numerosEntidades > 0) {
         $auxRol = strtoupper(strval($registros[0]["Rol"]));
         if($auxRol == "P"){
-            header("location: pastor.html?resultado=111");
+            session_start();
+	        $_SESSION['usuario'] = $usu;
+            $_SESSION['rol'] = $auxRol;
+            $_SESSION['ministerio'] = $registros[0]["Ministerio"];
+            header("location: pastor.html?resultado=112112");
             exit();
         }
         if($auxRol == "I"){
-            header("location: integrante.html?resultado=2222");
+            session_start();
+	        $_SESSION['usuario'] = $usu;
+            $_SESSION['rol'] = $registros[0]["Rol"];
+            $_SESSION['ministerio'] = $registros[0]["Ministerio"];
+            header("location: integrante.html?resultado=2121212");
             exit();
         }else{
             $auxRol = strtoupper(strval($registros[0]["Ministerio"]));
-            ($auxRol == "V")?header("location: lider.html?resultado=333"):header("location: integrante.html?resultado=444");
+            
+            session_start();
+	        $_SESSION['usuario'] = $usu;
+            $_SESSION['rol'] = strtoupper(strval($registros[0]["Rol"]));
+            $_SESSION['ministerio'] = $auxRol;
+
+            ($auxRol == "V")?header("location: lider.html?resultado=33344"):header("location: integrante.html?resultado=44455");
             exit();
         }
         
     } else {
-        header("location: index.php?resultado=2");
+        header("location: inicioSesion.html?resultado=200");
+        exit();
     }
 
 ?>
