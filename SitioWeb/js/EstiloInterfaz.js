@@ -32,14 +32,20 @@ function SetCookie(name, value, expires) {
 
 function getCookie(name) {
     if(document.cookie){
+        var busca;
         var lista = document.cookie.split(";");
             for (i in lista) {
-                var busca = lista[i].search(name);
+                busca = lista[i].search(name);
                 if (busca > -1) {micookie=lista[i]}
-                }
-            var igual = micookie.indexOf("=");
-            var valor = micookie.substring(igual+1);
-        return valor;
+            }
+            if(busca>-1){
+                var igual = micookie.indexOf("=");
+                var valor = micookie.substring(igual+1);
+                return valor;
+            }else{
+                return "";
+            }
+            
     }else{
         return "";
     }
