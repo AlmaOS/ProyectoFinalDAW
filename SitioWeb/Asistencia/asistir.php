@@ -15,7 +15,6 @@
     	die("Fallo: " . mysqli_connect_error());
 	}
 
-	
     $fecha = mysqli_real_escape_string($conexion, $date);
     $hora = mysqli_real_escape_string($conexion, $hour);
     $ClvUsuario = $_SESSION["ClvUsuario"];
