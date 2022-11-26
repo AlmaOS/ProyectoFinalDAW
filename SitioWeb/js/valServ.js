@@ -5,14 +5,14 @@ function validarServicios(form){
         return false;
     }
 
-    if(form.niños.value==""){
+    if(form.ninios.value==""){
         alert("Cantidad de niños inválida");
-        form.niños.select();
+        form.ninios.select();
         return false;
     }
-    if(isNaN(form.niños.value)){
+    if(isNaN(form.ninios.value)){
         alert("Cantidad de niños inválida");
-        form.niños.select();
+        form.ninios.select();
         return false;
     }
 
@@ -42,7 +42,7 @@ function validarServicios(form){
 }
 
 function sumarPersonas(form){
-    suma=parseFloat(form.niños.value)+parseFloat(form.prejuveniles.value)+parseFloat(form.adultos.value);
+    suma=parseFloat(form.ninios.value)+parseFloat(form.prejuveniles.value)+parseFloat(form.adultos.value);
     form.total.value=suma;
 }
 

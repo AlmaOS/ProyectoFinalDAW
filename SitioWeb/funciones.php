@@ -1,6 +1,4 @@
 <?php
-
-
 function EjecutarSQL ($servidor, $usuario, $contrasena, $basedatos, $sentenciaSQL) {
 
 	$conexion = mysqli_connect($servidor, $usuario, $contrasena, $basedatos);
