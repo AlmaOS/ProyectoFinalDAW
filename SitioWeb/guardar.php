@@ -24,6 +24,9 @@
         exit();
     }
 
+	// pendiente terminar esto
+	// y luego me voy a jacer lo de ajax
+
     $valoresTemporales = 10;
     $valoresTe = "o";
 
