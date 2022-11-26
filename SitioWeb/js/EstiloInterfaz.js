@@ -56,6 +56,8 @@ function verficiarFechaInicio(){
     if(fechaAuxiliar == ""){
         fecha = new Date();
         SetCookie("INICIO",fecha.toLocaleDateString());
+        //Ajax hace lo suyo 
+        //Se guarda en localStorable el resultado del versiculo obtenido en ajax
         insertarVersiculo();
     }else{
         fechaIngresoNuevo = new Date();
@@ -64,6 +66,8 @@ function verficiarFechaInicio(){
             fecha = new Date();
             SetCookie("INICIO","");
             SetCookie("INICIO",nuervaFechaIngre);
+            //Ajax hace lo suyo 
+            //Se guarda en localStorable el resultado del versiculo obtenido en ajax
             insertarVersiculo();
         }else{
             insertarVersiculo();
@@ -72,9 +76,10 @@ function verficiarFechaInicio(){
 }
 
 function insertarVersiculo(){
-    texttoEjemplo = '{"book":{"abbrev":{"pt":"sl","en":"ps"},"name":"Salmos","author":"David, Moisés, Salomão","group":"Poéticos","version":"rvr"},"chapter":117,"number":1,"text":"ALABAD á Jehová, naciones todas; Pueblos todos, alabadle."}';
+    //Lee del localStorable
+    texttoEjemplo = '{"booook":{"abbrev":{"pt":"sl","en":"ps"},"name":"Salmos","author":"David, Moisés, Salomão","group":"Poéticos","version":"rvr"},"chapter":117,"number":1,"text":"ALABAD á Jehová, naciones todas; Pueblos todos, alabadle."}';
     const obj = JSON.parse(texttoEjemplo);
-
+    localStorage.setItem("titulo", texttoEjemplo);
     var elemento = document.getElementById("prueba");
     elemento.innerHTML = obj.text+"<br>"+"Salmos"+obj.chapter+":"+obj.number;
 }
