@@ -19,24 +19,8 @@
     $ofrendas = mysqli_real_escape_string($conexion, $ofrend);
     $diezmo = mysqli_real_escape_string($conexion, $diez);
 
-    /**
-     * 
-     * OJO
-     * 
-     * 
-     * Como tenemos todo en una tabla, asistencias y recaudaciones
-     * Falta validar, si la fecha ya se usó antes para las asistencias de las personas, entonces debemos 
-     * buscar la fecha y modificar 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     */
     if (empty($fecha) || empty($ofrendas) || empty($diezmo)) {
-        header("location: recaudaciones.html");
+        header("location: servicios.html");
         exit();
     }
 
@@ -48,7 +32,9 @@
     $resultado = mysqli_query($conexion, $sql);
 	mysqli_close($conexion);
 
-    header("location: recaudaciones.html");
+    //$total = $_REQUEST["total"];
+
+    header("location: servicios.html?total=".$total);
     exit();
 
 
