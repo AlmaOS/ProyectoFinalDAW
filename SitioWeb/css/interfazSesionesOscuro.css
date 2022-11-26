@@ -76,6 +76,12 @@ img{
     color:#001845;
 }
 
+.textoDiario{
+    text-align: center;
+    font-size: 15pt;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
 .txtIcon{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;

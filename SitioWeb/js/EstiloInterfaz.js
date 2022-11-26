@@ -51,10 +51,40 @@ function getCookie(name) {
     }
 }
 
+function verficiarFechaInicio(){
+    var fechaAuxiliar = getCookie("INICIO");
+    if(fechaAuxiliar == ""){
+        fecha = new Date();
+        SetCookie("INICIO",fecha.toLocaleDateString());
+        insertarVersiculo();
+    }else{
+        fechaIngresoNuevo = new Date();
+        var nuervaFechaIngre = fechaIngresoNuevo.toLocaleDateString();
+        if(fechaAuxiliar != nuervaFechaIngre){
+            fecha = new Date();
+            SetCookie("INICIO","");
+            SetCookie("INICIO",nuervaFechaIngre);
+            insertarVersiculo();
+        }else{
+            insertarVersiculo();
+        }
+    }
+}
+
+function insertarVersiculo(){
+    texttoEjemplo = '{"book":{"abbrev":{"pt":"sl","en":"ps"},"name":"Salmos","author":"David, Moisés, Salomão","group":"Poéticos","version":"rvr"},"chapter":117,"number":1,"text":"ALABAD á Jehová, naciones todas; Pueblos todos, alabadle."}';
+    const obj = JSON.parse(texttoEjemplo);
+
+    var elemento = document.getElementById("prueba");
+    elemento.innerHTML = obj.text+"<br>"+"Salmos"+obj.chapter+":"+obj.number;
+}
+
 window.onload=function(){
     asignarModo();
     modo = document.getElementById("bModo").value;
     document.getElementById("bModo").onclick=function () {
         cambiarModo(modo);
     }
+
+    verficiarFechaInicio();
 }
