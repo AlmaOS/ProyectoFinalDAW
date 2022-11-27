@@ -88,24 +88,7 @@ function insertarVersiculo(){
     elemento.innerHTML = obj.text+"<br>"+"Proverbios "+obj.chapter+":"+obj.number;
 }
 
-function cargarContenidoAjax(){
-    var xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        localStorage.setItem("Versi", xhttp.responseText);
-    }else{
-        localStorage.setItem("Versi", '{"book": { "abbrev": {"pt": "pv","en": "prv"}, "name": "Provérbios", "author": "Salomão","group": "Poéticos","version": "rvr"},"chapter": 27,"number": 6, "text": "Son más confiables las heridas del que ama, que los falsos besos del que aborrece."}');
-        console.log("Se llegó al limite de peticiones");
-    }
-    };
-
-    xhttp.open("GET", "https://www.abibliadigital.com.br/api/verses/rvr/prv/random", true);
-    xhttp.send();
-}
-
 var http_request = false;
-
     function makeRequest(url) {
 
         http_request = false;
@@ -137,11 +120,9 @@ var http_request = false;
     }
 
     function alertContents() {
-
         if (http_request.readyState == 4) {
             if (http_request.status == 200) {
                 localStorage.setItem("Versi", http_request.responseText);
-
             } else {
                 alert('Hubo problemas con la petición.');
                 localStorage.setItem("Versi", '{"book": { "abbrev": {"pt": "pv","en": "prv"}, "name": "Provérbios", "author": "Salomão","group": "Poéticos","version": "rvr"},"chapter": 27,"number": 6, "text": "Son más confiables las heridas del que ama, que los falsos besos del que aborrece."}');
