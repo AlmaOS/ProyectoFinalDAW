@@ -1,14 +1,15 @@
-function sumarPersonas(form){
-    suma = parseFloat(form.niños.value)+parseFloat(form.prejuveniles.value)+parseFloat(form.adultos.value);
+function sumarRecaudaciones(form){
+    suma = parseFloat(form.ofrendas.value)+parseFloat(form.diezmo.value);
     form.total.value = suma;
-    alert(suma);
+    return suma;
 }
 
 window.onload = function(){
     var detener = true;
 
     document.Frecauds.onsubmit = function () {
-        return confirm("El total de  asistencias son "+ sumarPersonas(Frecauds)+" ¿Desea continuar?");
+        var resultadoRecaudaciones = sumarRecaudaciones(Frecauds);
+        return confirm("El total de recaudaciones son "+ resultadoRecaudaciones+" ¿Desea continuar?");
     }
 
     document.getElementById("guardar").onclick=function(){
@@ -18,14 +19,14 @@ window.onload = function(){
             return false;
         }
 
-        if(Frecauds.niños.value==""){
+        if(Frecauds.ninios.value==""){
             alert("Cantidad de niños inválida");
-            Frecauds.niños.select();
+            Frecauds.ninios.select();
             return false;
         }
-        if(isNaN(Frecauds.niños.value)){
+        if(isNaN(Frecauds.ninios.value)){
             alert("Cantidad de niños inválida");
-            Frecauds.niños.select();
+            Frecauds.ninios.select();
             return false;
         }
     
