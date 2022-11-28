@@ -75,6 +75,12 @@ img{
     color:#0d47a1;
 }
 
+.textoDiario{
+    text-align: center;
+    font-size: 15pt;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
 .txtIcon{
     text-align: center;
     font-family: "Century Gothic", Calibri;
@@ -101,6 +107,7 @@ img{
     border: none;
     border-radius: 10px;
 }
+
 
 @media screen and (max-width: 1050px){
     .logo{
