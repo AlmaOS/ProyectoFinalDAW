@@ -46,7 +46,7 @@
               <input type="submit" id="iniciarSesion" class="btn" value="Iniciar Sesión">
             </p><br>
             <p class="alinear">
-              <a href="#" class="hiper">Registrarse </a> &nbsp; si aún no tiene cuenta
+              <a href="#" class="hiper" id="registroButton">Registrarse </a> &nbsp; si aún no tiene cuenta
             </p>
           </form>
         </div>

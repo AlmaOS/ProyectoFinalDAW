@@ -21,4 +21,23 @@ window.onload = function (){
         return true;
     }
 
+    document.getElementById("registroButton").onclick = function (){
+        crearFormRegistro();
+    }
+
+}
+
+function crearFormRegistro(){
+    document.getElementById("formularioInicio").innerHTML =
+        " <form class=\"formulario\" name=\"formularioRegistro\" method=\"post\" action=\"registrar.php\">\n" +
+        "                <p>Clave:</p>\n" +
+        "                <input type=\"text\" class=\"campoTexto\" id=\"claveUsuario\" name=\"clave\"><br><br><br>\n" +
+        "                <p>Usuario:</p>\n" +
+        "                <input type=\"text\" class=\"campoTexto\" id=\"usuario\" name=\"usuario\"><br><br><br>\n" +
+        "                <p>Contraseña:</p>\n" +
+        "                <input type=\"password\" class=\"campoTexto\" id=\"contrasena\" name=\"contrasena\"><br><br><br>\n" +
+        "                <p class=\"alinear\">\n" +
+        "                    <input type=\"submit\" id=\"Registrar\" class=\"btn\" value=\"Registrarse\">\n" +
+        "                </p><br>\n" +
+        "            </form>";
 }
