@@ -19,24 +19,21 @@
             <div class="content">
 
                 <div class="form">
-                    <form name="FArchivoB" method="get" action="Archivo/descargar.php">
+                    <form name="FArchivoB" method="get" action="Archivo/buscar.php">
                         Generar reporte<br>
                         Fecha de Servicio:
                         <input type="date" name="fecha"><br><br>
                         <br><br><br><input type="submit" name="guardar" id="descargarArchivo" value="Descargar">
                     </form>
                 </div>
-
+                <br>
                 <div class="form">
-                    <form name="formu2" method="get" action="https://www.php.net/manual/es/features.file-upload.php">
+                    <form name="formu2" method="post" action="Archivo/subir.php" enctype="multipart/form-data">
+                        Subir reporte<br>
                         Fecha de Servicio:
                         <input type="date" name="fecha"><br><br>
-                        Asistencia:<br>
-                        <input type="radio" name="presente" value="Presente">Presente<br><br>
-                        <input type="radio" name="presente" value="NoPresente">No Presente<br><br>
-                        Hora:
-                        <input type="text" name="hora" placeholder="12:00">
-                        <br>*Por favor, ingresa la hora en el formato del ejemplo en 24 horas.
+                        Archivo:<br>
+                        <input type="file" name="file" id="file" accept=".xls">
                         <br><br><br><input type="submit" name="guardar" id="guardarArchivo" value="Guardar">
                     </form>
                 </div>
