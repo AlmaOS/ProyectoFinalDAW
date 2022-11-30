@@ -54,7 +54,7 @@ window.onload = function(){
             return false;
         }
         repaldarDatos();
-        return false;
+        return true;
     }
 
 }
