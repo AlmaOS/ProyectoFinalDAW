@@ -6,7 +6,7 @@
         <title>Asistencia</title>
         <link rel="shortcut icon" href="img/logoIcono.ico">
         <link rel="stylesheet" href="css/formStyle.css">
-        <!--<script src="js/valAsist.js"></script>-->
+        <script src="js/valArchivo.js"></script>
     </head>
     <body>
         <div>
@@ -17,19 +17,16 @@
                 <div class="regresar"><a href="javascript: history.go(-1)">Regresar</a></div>
             </div>
             <div class="content">
+
                 <div class="form">
-                    <form name="Fasist" method="get" action="https://makitweb.com/demos/multiple-files-upload-at-once-with-php">
+                    <form name="FArchivoB" method="get" action="Archivo/descargar.php">
+                        Generar reporte<br>
                         Fecha de Servicio:
                         <input type="date" name="fecha"><br><br>
-                        Asistencia:<br>
-                        <input type="radio" name="presente" value="Presente">Presente<br><br>
-                        <input type="radio" name="presente" value="NoPresente">No Presente<br><br>
-                        Hora:
-                        <input type="text" name="hora" placeholder="12:00">
-                        <br>*Por favor, ingresa la hora en el formato del ejemplo en 24 horas.
-                        <br><br><br><input type="submit" name="guardar" id="descargarArchivo" value="Guardar">
+                        <br><br><br><input type="submit" name="guardar" id="descargarArchivo" value="Descargar">
                     </form>
                 </div>
+
                 <div class="form">
                     <form name="formu2" method="get" action="https://www.php.net/manual/es/features.file-upload.php">
                         Fecha de Servicio:
