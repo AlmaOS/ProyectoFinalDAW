@@ -2,7 +2,7 @@
  include("../variables.php");
  include("../funciones.php");
 
-$sql = "SELECT Fecha,Ofrenda,Diezmo from servicio";
+$sql = "SELECT Fecha from servicio";
 $array= ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
 
 function llenarSeleccion($array){

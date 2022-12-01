@@ -39,6 +39,7 @@ function mostrarInfoCuentas($array){
         <div>
             <div><a href="../cuentas.html">Nuevo</a></div>
             <div><input type="submit" name="eliminar" value="Eliminar"></div>
+            <div><a href="infoCuentas.php">Modificar</a></div>
         </div>
     </form>
 </div>
