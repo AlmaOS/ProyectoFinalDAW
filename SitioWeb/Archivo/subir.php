@@ -1,4 +1,5 @@
 <?php
+    /*
     if(isset($_POST['guardar'])){
  
         // Count total files
@@ -12,5 +13,6 @@
             move_uploaded_file($_FILES['file']['tmp_name'],'../upload/'.$filename);
      
         //}
-    } 
+    }
+    */ 
 ?>

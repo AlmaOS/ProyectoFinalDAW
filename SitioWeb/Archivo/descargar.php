@@ -51,16 +51,17 @@
 
         if (!($res = $conexion->query("CALL EncontrarServicio('$fechaServicio')"))) {
             mysqli_close($conexion);
-            echo "Falló la llamada: (" . $mysqli->error . ") " . $mysqli->error;
+            echo "Falló la llamada";
         }
 
         for ($registros = array (); $fila = mysqli_fetch_assoc($res); $registros[] = $fila);	
         mysqli_close($conexion);
         
-        generarXLS($registros);
+        $nombreArchivo = $fechaServicio.".xls";
+        generarXLS($registros,$nombreArchivo);
     }
 
-    function generarXLS($array) {
+    function generarXLS($array,$nombreArchivo) {
         $tabla='<html><body>';
         $tabla.='<table>';
         $tabla.='<tr><td>Fecha</td><td>Diezmo</td><td>Ofrenda</td><td>Clave articulo</td><td>Nombre Articulo</td></tr>';
@@ -76,8 +77,9 @@
         $tabla.='</table>';
         $tabla.='</body></html>';
 
+        $nombre = $nombreArchivo;
         header('Content-Type: application/force-download');
-        header('Content-Disposition: attachment; filename="Reporte.xls"');
+        header('Content-Disposition: attachment; filename="'."$nombre".'"');
         header('Content-Transfer-Encoding: binary');
 
         print $tabla;
