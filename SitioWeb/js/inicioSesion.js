@@ -23,7 +23,33 @@ window.onload = function (){
 
     document.getElementById("registroButton").onclick = function (){
         crearFormRegistro();
+
+        document.getElementById("Registro").onclick = function (){
+
+            if (document.getElementById("claveUsuario").value === "" || document.getElementById("usuarioR").value === ""  || document.getElementById("contrasenaR").value === "" ) {
+                //document.getElementById("claveUsuario").focus();
+                alert("Registro incorrecto, algún elemento vacío");
+                //return false;
+            }
+
+            /*if (document.getElementById("usuarioR").value === "" ) {
+                document.getElementById("usuarioR").focus();
+                alert("Debe ingresar su usuario");
+                return false;
+            }
+
+            if (document.getElementById("contrasenaR").value === "" ) {
+                document.getElementById("contrasenaR").focus();
+                alert("Debe ingresar su contraseña");
+                return false;
+            }*/
+            //return true;
+        }
     }
+
+
+
+
 
 }
 
@@ -33,11 +59,12 @@ function crearFormRegistro(){
         "                <p>Clave:</p>\n" +
         "                <input type=\"text\" class=\"campoTexto\" id=\"claveUsuario\" name=\"clave\"><br><br><br>\n" +
         "                <p>Usuario:</p>\n" +
-        "                <input type=\"text\" class=\"campoTexto\" id=\"usuario\" name=\"usuario\"><br><br><br>\n" +
+        "                <input type=\"text\" class=\"campoTexto\" id=\"usuario\" name=\"usuarioR\"><br><br><br>\n" +
         "                <p>Contraseña:</p>\n" +
-        "                <input type=\"password\" class=\"campoTexto\" id=\"contrasena\" name=\"contrasena\"><br><br><br>\n" +
+        "                <input type=\"password\" class=\"campoTexto\" id=\"contrasena\" name=\"contrasenaR\"><br><br><br>\n" +
         "                <p class=\"alinear\">\n" +
-        "                    <input type=\"submit\" id=\"Registrar\" class=\"btn\" value=\"Registrarse\">\n" +
+        "                    <input type=\"submit\" id=\"Registro\" class=\"btn\" value=\"Registrarse\">\n" +
+        "                    <br><br><a class='hiper' href=\"redireccionar.php\"> <i class=\"fa-solid fa-arrow-left\"></i>Regresar</a>"+
         "                </p><br>\n" +
         "            </form>";
 }
