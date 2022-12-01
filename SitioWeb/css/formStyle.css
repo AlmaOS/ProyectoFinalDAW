@@ -80,6 +80,22 @@ input{
     border: none;
 }
 
+#descargarArchivo{
+    background-color: #0d47a1;
+    color: white;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+}
+
+#guardarArchivo{
+    background-color: #0d47a1;
+    color: white;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+}
+
 #guardar:hover{
     background-color: #A9D6E5;
     border: none;
