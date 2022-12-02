@@ -1,6 +1,6 @@
 <?php
     if(empty($_REQUEST["clave"]) || empty($_REQUEST["usuarioR"]) || empty($_REQUEST["contrasenaR"])){
-      header("location:../inicioSesion.php/#");
+      header("location:redireccionar.php?error=20");//"location:../inicioSesion.php?error=1"
        exit();
     }
 
@@ -15,7 +15,7 @@
         die("Fallo: " . mysqli_connect_error());
     }
 
-    $sql = "UPDATE usuario SET NombreUsu='".$user."', contrasena='".$contrasena."' WHERE ClvUsuario='".$claveUser."';";
+    $sql = "UPDATE usuario SET NombreUsu='".$user."', contrasena='".$contra."' WHERE ClvUsuario='".$claveUser."'";
     $resultado = mysqli_query($conexion, $sql);
     mysqli_close($conexion);
     header("location:../inicioSesion.php/#");
