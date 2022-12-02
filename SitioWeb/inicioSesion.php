@@ -1,3 +1,23 @@
+<?php
+  if(isset($_REQUEST["error"])){
+    switch ($_REQUEST["error"]) {
+      case 1:
+          $cadena = "Error._1";
+          break;
+      case 2:
+          $cadena = "Error._2";
+          break;
+      case 3:
+          $cadena = " Aquí va tu error Alma";
+          break;
+      default:
+        $cadena = "";
+    }
+  }else{
+    $cadena = "";
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +29,9 @@
     <link rel="stylesheet" href="../css/barraPie.css">
     <script src="https://kit.fontawesome.com/32587f35af.js" crossorigin="anonymous"></script>
     <script src="../js/inicioSesion.js"></script>
+    <script>
+	    <?php echo "var estado = '" . $cadena . "';"; ?>
+    </script>
   </head>
   <body>
     <nav class="barraNavegacion">
@@ -45,6 +68,10 @@
             <p class="alinear">
               <input type="submit" id="iniciarSesion" class="btn" value="Iniciar Sesión">
             </p><br>
+            <div id="estado">
+              <img src="../img/advertencia.png" alt="ocurre error">
+              <div id=textoEstado></div>
+            </div>
             <p class="alinear">
               <a href="#" class="hiper">Registrarse </a> &nbsp; si aún no tiene cuenta
             </p>
