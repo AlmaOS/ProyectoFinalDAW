@@ -1,6 +1,6 @@
 <?php
     if (empty($_REQUEST["usuario"]) || empty($_REQUEST["contrasena"])) {
-        header("location:../inicioSesion.php");
+        header("location:../inicioSesion.php?error=1");
         exit();
     }
 
@@ -14,45 +14,39 @@
         die("Fallo: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT 	ClvUsuario, NombreUsu, contrasena, Rol, Ministerio FROM usuario WHERE NombreUsu ='" . $usu . "' AND contrasena ='" . $contra . "'";
-    $resultado = mysqli_query($conexion, $sql);
-    mysqli_close($conexion);
+    include("../funciones.php");
+    $sentenciaSQL = "SELECT 	ClvUsuario, NombreUsu, contrasena, Rol, Ministerio FROM usuario WHERE NombreUsu ='" . $usu . "' AND contrasena ='" . $contra . "'";
+    $registros = ConsultarSQL($servidor, $usuario, $contrasena, $basedatos, $sentenciaSQL);
 
-    for ($registros = array (); $fila = mysqli_fetch_assoc($resultado); $registros[] = $fila);
     $numerosEntidades = count($registros);
 
     if ($numerosEntidades > 0) {
         $auxRol = strtoupper(strval($registros[0]["Rol"]));
+        $auxMinisterio = strtoupper(strval($registros[0]["Ministerio"]));
         if($auxRol == "P"){
-            session_start();
-            $_SESSION['ClvUsuario'] = $registros[0]["ClvUsuario"];
-	        $_SESSION['usuario'] = $usu;
-            $_SESSION['rol'] = $auxRol;
-            $_SESSION['ministerio'] = $registros[0]["Ministerio"];
-            header("location: ../pastor.html?resultado=112112");
+            iniciarVaribleSesion($registros, $usu, $auxRol, $auxMinisterio);
+            header("location: ../pastor.html");
             exit();
         }
         if($auxRol == "I"){
-            session_start();
-            $_SESSION['ClvUsuario'] = $registros[0]["ClvUsuario"];
-	        $_SESSION['usuario'] = $usu;
-            $_SESSION['rol'] = $registros[0]["Rol"];
-            $_SESSION['ministerio'] = $registros[0]["Ministerio"];
-            header("location: ../integrante.html?resultado=2121212&clv=$registros[0]['ClvUsuario']");
+            iniciarVaribleSesion($registros, $usu, $auxRol, $auxMinisterio);
+            header("location: ../integrante.html?correcto=1");
             exit();
         }else{
-            $auxRol = strtoupper(strval($registros[0]["Ministerio"]));
-            session_start();
-            $_SESSION['ClvUsuario'] = $registros[0]["ClvUsuario"];
-	        $_SESSION['usuario'] = $usu;
-            $_SESSION['rol'] = strtoupper(strval($registros[0]["Rol"]));
-            $_SESSION['ministerio'] = $auxRol;
-            ($auxRol == "V")?header("location: ../lider.html?resultado=33344"):header("location: ../integrante.html?resultado=44455");
+            iniciarVaribleSesion($registros, $usu, $auxRol, $auxMinisterio);
+            ($auxMinisterio == "V")?header("location: ../lider.html"):header("location: ../integrante.html");
             exit();
         }
     } else {
-        header("location: redireccionar.php?resultado=200");
+        header("location: redireccionar.php?error=2");
         exit();
     }
 
+    function iniciarVaribleSesion($registros, $usu, $auxRol, $auxMinisterio){
+        session_start();
+            $_SESSION['ClvUsuario'] = $registros[0]["ClvUsuario"];
+	        $_SESSION['usuario'] = $usu;
+            $_SESSION['rol'] = $auxRol;
+            $_SESSION['ministerio'] = $auxMinisterio;
+    }
 ?>

@@ -57,8 +57,12 @@
         for ($registros = array (); $fila = mysqli_fetch_assoc($res); $registros[] = $fila);	
         mysqli_close($conexion);
         
+	if(empty($registros)){
+		header("location: ../archivo.html?error=20");
+	}else{
         $nombreArchivo = $fechaServicio.".xls";
         generarXLS($registros,$nombreArchivo);
+	}
     }
 
     function generarXLS($array,$nombreArchivo) {
@@ -85,20 +89,4 @@
         print $tabla;
     
     }
-    /*
-    $conexion = mysqli_connect($servidor, $usuario, $contrasena, $basedatos);
-	if (!$conexion) {
-    	die("Fallo: " . mysqli_connect_error());
-	}
-
-    if (!($res = $conexion->query("CALL EncontrarServicio('2022-11-30')"))) {
-        echo "Falló la llamada: (" . $mysqli->error . ") " . $mysqli->error;
-    }
-	for ($registros = array (); $fila = mysqli_fetch_assoc($res); $registros[] = $fila);	
-    mysqli_close($conexion);
-    echo $registros[0]['Fecha'];
-    
-    generarXLS($registros);
-    
-    */
 ?>
