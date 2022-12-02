@@ -14,19 +14,20 @@
             <div class="logo"><a href="index.html"><img src="img/logoIglesiaBlanco.png"></a> </div>
             <div class="headTxt"><div class="titulo">Manantial de vida</div>
             <div class="subtitulo">Asistencia</div></div>
+            <div class="regresar"><a href="javascript: history.go(-1)">Regresar</a></div>
         </div>
         <div class="content">
             <div class="form">
-                <form name="Fasist">
+                <form name="Fasist" method="get" action="Asistencia/asistir.php">
                     Fecha de Servicio:
                     <input type="date" name="fecha"><br><br>
                     Asistencia:<br>
                     <input type="radio" name="presente" value="Presente">Presente<br><br>
-                    <input type="radio" name="presente" value="No Presente">No Presente<br><br>
+                    <input type="radio" name="presente" value="NoPresente">No Presente<br><br>
                     Hora:
                     <input type="text" name="hora" placeholder="12:00">
                     <br>*Por favor, ingresa la hora en el formato del ejemplo en 24 horas.
-                    <br><br><br><input type="button" name="guardar" id="guardar" value="Guardar">
+                    <br><br><br><input type="submit" name="guardar" id="guardar" value="Guardar">
                 </form>
             </div>
         </div>

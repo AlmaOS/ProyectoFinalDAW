@@ -10,6 +10,20 @@ body{
     justify-content: center;
 }
 
+.regresar{
+    text-decoration: none;
+    font-size: 20pt;
+    color: white;
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
 .logo{
     width: 10%;
 }
@@ -66,6 +80,22 @@ input{
     border: none;
 }
 
+#descargarArchivo{
+    background-color: #0d47a1;
+    color: white;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+}
+
+#guardarArchivo{
+    background-color: #0d47a1;
+    color: white;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+}
+
 #guardar:hover{
     background-color: #A9D6E5;
     border: none;
@@ -86,6 +116,19 @@ label{
 
 .checkConte{
     text-align: left;
+}
+
+#registrosInventario{
+    border: #0d47a1 solid;
+    border-radius: 10px;
+    width: 50px;
+    height: 25px;
+}
+
+#estadoMemoria{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1200px) {
