@@ -1,3 +1,29 @@
+<?php
+  if(isset($_REQUEST["error"])){
+    switch ($_REQUEST["error"]) {
+      case 1:
+          $cadena = "Error._1";
+          break;
+      case 2:
+          $cadena = "Error._2";
+          break;
+      case 3:
+           $cadena = "Error._3";
+           break;
+      case 4:
+        $cadena = "Error._4";
+        break;
+      case 5:
+        $cadena = "Error._5";
+        break;
+      default:
+        $cadena = "";
+    }
+  }else{
+    $cadena = "";
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +33,9 @@
     <link rel="shortcut icon" href="img/logoIcono.ico">
     <link rel="stylesheet" href="css/formStyle.css">
     <script src="js/valInventario.js"></script>
+    <script>
+	        <?php echo "var estado = '" . $cadena . "';"; ?>
+    </script>
   </head>
   <body>
     <div>
@@ -15,6 +44,7 @@
         <div class="logo"><a href="index.html"><img src="img/logoIglesiaBlanco.png" alt="logo"></a></div>
         <div class="headTxt"><div class="titulo">Manantial de vida</div>
           <div class="subtitulo">Inventario</div></div>
+          <div class="regresar"><a href="Sesion/redireccionar.php">Regresar</a></div>
       </div>
 
       <div class="content">
@@ -23,6 +53,11 @@
           <input type="button" value="Ver" id="registrosInventario">
         </div>
         <div class="form">
+                <div id="estado">
+                    <img src="img/advertencia.png" alt="ocurre error">
+                    <div id=textoEstado></div>
+                </div>
+
           <form name="Finven" class="finven" method="get" action="Inventario/inventariar.php">
             Fecha de Servicio:
             <input type="date" name="fecha"><br><br>

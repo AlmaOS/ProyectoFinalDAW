@@ -1,13 +1,18 @@
 <?php
+    if(!isset($_REQUEST["fecha"])){
+        header("location: ../archivo.php?error=1");
+        exit();
+    }
+
     if(empty($_REQUEST["fecha"])){
-        header("location: ../archivo.html?error=1");
+        header("location: ../archivo.php?error=1");
         exit();
     }
 
     $fechaAux = filter_var($_REQUEST["fecha"], FILTER_SANITIZE_STRING);
 
     if(!validarFecha($fechaAux)){
-        header("location: ../archivo.html?error=2");
+        header("location: ../archivo.php?error=2");
         exit();
     }
 
@@ -43,26 +48,17 @@
     function generarArchivo($fechaServicio){
         echo "La fecha de entrada es $fechaServicio";
         include("../variables.php");
+        include("../funciones.php");
 
-        $conexion = mysqli_connect($servidor, $usuario, $contrasena, $basedatos);
-	    if (!$conexion) {
-    	    die("Fallo: " . mysqli_connect_error());
-	    }
+        $sentenciaSQL = "CALL EncontrarServicio('$fechaServicio')";
+        $registros = ConsultarSQL($servidor, $usuario, $contrasena, $basedatos, $sentenciaSQL);
 
-        if (!($res = $conexion->query("CALL EncontrarServicio('$fechaServicio')"))) {
-            mysqli_close($conexion);
-            echo "Falló la llamada";
+        if(empty($registros)){
+            header("location: ../archivo.php?error=3");
+        }else{
+            $nombreArchivo = $fechaServicio.".xls";
+            generarXLS($registros,$nombreArchivo);
         }
-
-        for ($registros = array (); $fila = mysqli_fetch_assoc($res); $registros[] = $fila);	
-        mysqli_close($conexion);
-        
-	if(empty($registros)){
-		header("location: ../archivo.html?error=20");
-	}else{
-        $nombreArchivo = $fechaServicio.".xls";
-        generarXLS($registros,$nombreArchivo);
-	}
     }
 
     function generarXLS($array,$nombreArchivo) {

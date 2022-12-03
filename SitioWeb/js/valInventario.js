@@ -38,12 +38,53 @@ function verificar(){
     }
 }
 
+function ocultarPanelEstado(panelEstado) {
+    document.getElementById("estado").style.display = "none";
+}
+
+function mostarMensaje(mensaje){
+    document.getElementById("estado").style.display = "flex";
+    panelEstado = document.getElementById("textoEstado");
+    panelEstado.innerHTML+= mensaje;
+    setTimeout(ocultarPanelEstado, 3000);
+}
+
+function mostrarMensajes(estadosMensajes){
+    partesMensaje = estadosMensajes.split("_");
+    //alert("Mensase 1 es: "+ partesMensaje[0]+" "+ partesMensaje[1]);
+    if (estadosMensajes != "") {
+        switch (partesMensaje[1]) {
+            case '1':
+                mostarMensaje("Fecha vacia");
+              break;
+            case '2':
+                mostarMensaje("El formato de fecha no es el correcto");
+              break;
+            case '3':
+                mostarMensaje("No hay servicio registrado");
+            break;
+            case '4':
+                mostarMensaje("Ya se hizo el inventario");
+            break;
+            case '5':
+                mostarMensaje("Error al guardar el inventario");
+            break;
+            default:
+          }
+    }
+}
+
 window.onload = function(){
+
+
     document.getElementById("estadoMemoria").style.display = "none";
 
     document.getElementById("registrosInventario").onclick=function(){
         mostrarEnPantalla();
     }
+
+    document.getElementById("estado").style.display = "none";
+    mostrarMensajes(estado);
 
     verificar();
 
