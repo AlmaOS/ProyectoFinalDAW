@@ -2,6 +2,11 @@
     session_start();
     include("../variables.php");
 
+    if (!isset($_REQUEST["fecha"]) || !isset($_REQUEST["presente"]) || !isset($_REQUEST["hora"])) {
+        header("location: ../asistencia.php?error=1");
+        exit();
+    }
+
     if (empty($_REQUEST["fecha"]) || empty($_REQUEST["presente"]) || empty($_REQUEST["hora"])) {
         header("location: ../asistencia.php?error=1");
         exit();

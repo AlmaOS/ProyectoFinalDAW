@@ -46,7 +46,7 @@
                 <div id=textoEstado></div>
                 </div>
                 <div class="form">
-                    <form name="Fasist" method="get" action="Asistencia/asistir.php">
+                    <form name="Fasist" method="post" action="Asistencia/asistir.php">
                         Fecha de Servicio:
                         <input type="date" name="fecha"><br><br>
                         Asistencia:<br>

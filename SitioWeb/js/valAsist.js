@@ -2,28 +2,26 @@ function ocultarPanelEstado(panelEstado) {
     document.getElementById("estado").style.display = "none";
 }
 
+function mostarMensaje(mensaje){
+    document.getElementById("estado").style.display = "flex";
+    panelEstado = document.getElementById("textoEstado");
+    panelEstado.innerHTML+= mensaje;
+    setTimeout(ocultarPanelEstado, 3000);
+}
+
 function mostrarMensajes(estadosMensajes){
     partesMensaje = estadosMensajes.split("_");
     //alert("Mensase 1 es: "+ partesMensaje[0]+" "+ partesMensaje[1]);
     if (estadosMensajes != "") {
         switch (partesMensaje[1]) {
             case '1':
-                document.getElementById("estado").style.display = "flex";
-                panelEstado = document.getElementById("textoEstado");
-                panelEstado.innerHTML+= "Campos vacios"
-                setTimeout(ocultarPanelEstado, 3000);
+                mostarMensaje("campos vacios");
               break;
             case '2':
-                document.getElementById("estado").style.display = "flex";
-                panelEstado = document.getElementById("textoEstado");
-                panelEstado.innerHTML+= "Formato incorrecto de hora o fecha";
-                setTimeout(ocultarPanelEstado, 3000);
+                mostarMensaje("Formato incorrecto de fecha u hora");
               break;
             case '3':
-                document.getElementById("estado").style.display = "flex";
-                panelEstado = document.getElementById("textoEstado");
-                panelEstado.innerHTML+= "Ya se ha guardado la asistencia";
-                setTimeout(ocultarPanelEstado, 3000);
+                mostarMensaje("Ya hay una asistencia guardada");
             break;
             default:
           }
