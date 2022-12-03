@@ -1,4 +1,40 @@
+function ocultarPanelEstado(panelEstado) {
+    document.getElementById("estado").style.display = "none";
+}
+
+function mostrarMensajes(estadosMensajes){
+    partesMensaje = estadosMensajes.split("_");
+    //alert("Mensase 1 es: "+ partesMensaje[0]+" "+ partesMensaje[1]);
+    if (estadosMensajes != "") {
+        switch (partesMensaje[1]) {
+            case '1':
+                document.getElementById("estado").style.display = "flex";
+                panelEstado = document.getElementById("textoEstado");
+                panelEstado.innerHTML+= "Campos vacios"
+                setTimeout(ocultarPanelEstado, 3000);
+              break;
+            case '2':
+                document.getElementById("estado").style.display = "flex";
+                panelEstado = document.getElementById("textoEstado");
+                panelEstado.innerHTML+= "Formato incorrecto de hora o fecha";
+                setTimeout(ocultarPanelEstado, 3000);
+              break;
+            case '3':
+                document.getElementById("estado").style.display = "flex";
+                panelEstado = document.getElementById("textoEstado");
+                panelEstado.innerHTML+= "Ya se ha guardado la asistencia";
+                setTimeout(ocultarPanelEstado, 3000);
+            break;
+            default:
+          }
+    }
+}
+
 window.onload=function(){
+
+    document.getElementById("estado").style.display = "none";
+    mostrarMensajes(estado);
+
     document.getElementById("guardar").onclick=function(){
         if(Fasist.fecha.value==""){
             alert("No seleccionó la fecha");
@@ -38,7 +74,7 @@ window.onload=function(){
                     return false;
                 }
                 if(tiempo[1]<0 || tiempo[1]>60){
-                    alert("La hora es inválida+22");
+                    alert("La hora es inválida");
                     Fasist.hora.select();
                     return false;
                 }
