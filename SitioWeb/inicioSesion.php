@@ -8,7 +8,13 @@
           $cadena = "Error._2";
           break;
       case 3:
-          $cadena = " Aquí va tu error Alma";
+          $cadena = "Error._3";
+          break;
+      case 4:
+          $cadena = "Error._4";
+          break;
+      case 5:
+          $cadena = "Error._5";
           break;
       default:
         $cadena = "";
@@ -71,6 +77,10 @@
             <div id="estado">
               <img src="../img/advertencia.png" alt="ocurre error">
               <div id=textoEstado></div>
+            </div>
+            <div id="estado2">
+                <img class="imgEstado" src="../img/registrado.png" alt="Registro correcto">
+                <div id=textoEstado2></div>
             </div>
             <p class="alinear">
               <a href="#" class="hiper" id="registroButton">Registrarse </a> &nbsp; si aún no tiene cuenta

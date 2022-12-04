@@ -1,6 +1,6 @@
 <?php
     if(empty($_REQUEST["clave"]) || empty($_REQUEST["usuarioR"]) || empty($_REQUEST["contrasenaR"])){
-      header("location:redireccionar.php?error=20");//"location:../inicioSesion.php?error=1"
+      header("location:redireccionar.php?error=3");//"location:../inicioSesion.php?error=1"
        exit();
     }
 
@@ -15,9 +15,30 @@
         die("Fallo: " . mysqli_connect_error());
     }
 
-    $sql = "UPDATE usuario SET NombreUsu='".$user."', contrasena='".$contra."' WHERE ClvUsuario='".$claveUser."'";
-    $resultado = mysqli_query($conexion, $sql);
-    mysqli_close($conexion);
-    header("location:../inicioSesion.php/#");
-    exit();
+    include("../funciones.php");
+    $sentenciaSQL = "SELECT ClvUsuario FROM usuario";
+    $registros = ConsultarSQL($servidor, $usuario, $contrasena, $basedatos, $sentenciaSQL);
+    $numerosEntidades = count($registros);
+
+    function buscarClave($numerosEntidades,$registros,$claveUser){
+        $encontrado = false;
+        for($i=0;$i<$numerosEntidades;$i++){
+            if($registros[$i]["ClvUsuario"] == $claveUser){
+                $encontrado = true;
+                break;
+            }
+        }
+        return $encontrado;
+    }
+
+    $clvEncontrada = buscarClave($numerosEntidades,$registros,$claveUser);
+    if($clvEncontrada){
+        $sql = "UPDATE usuario SET NombreUsu='".$user."', contrasena='".$contra."' WHERE ClvUsuario='".$claveUser."'";
+        $resultado = mysqli_query($conexion, $sql);
+        mysqli_close($conexion);
+        header("location:redireccionar.php?error=5");
+    }else{
+        header("location:redireccionar.php?error=4");
+    }
+
 ?>
