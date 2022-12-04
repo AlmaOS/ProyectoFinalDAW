@@ -1,5 +1,6 @@
 function ocultarPanelEstado(panelEstado) {
     document.getElementById("estado").style.display = "none";
+    document.getElementById("estado2").style.display = "none";
 }
 
 function mostrarMensajes(estadosMensajes){
@@ -18,7 +19,26 @@ function mostrarMensajes(estadosMensajes){
                 panelEstado = document.getElementById("textoEstado");
                 panelEstado.innerHTML+= "Usuario o contrase&ntilde;a incorrectos";
                 setTimeout(ocultarPanelEstado, 3000);
+                break;
+            case '3':
+                crearFormRegistro();
+                document.getElementById("estado").style.display = "flex";
+                panelEstado = document.getElementById("textoEstado");
+                panelEstado.innerHTML+= "Campos vacíos, no se pudo registrar";
+                setTimeout(ocultarPanelEstado, 5000);
               break;
+            case '4':
+                crearFormRegistro();
+                document.getElementById("estado").style.display = "flex";
+                panelEstado = document.getElementById("textoEstado");
+                panelEstado.innerHTML+= "La clave de registro no existe";
+                setTimeout(ocultarPanelEstado, 5000);
+                break;
+            case '5':
+                document.getElementById("estado2").style.display = "flex";
+                panelEstado = document.getElementById("textoEstado2");
+                panelEstado.innerHTML+= "Se ha registrado correctamente, inicie sesión";
+                setTimeout(ocultarPanelEstado, 5000);
             default:
           }
     }
@@ -32,7 +52,7 @@ window.onload = function (){
         navMenu.classList.toggle("menuDesplegable")
     });
     document.getElementById("estado").style.display = "none";
-
+    document.getElementById("estado2").style.display = "none";
     mostrarMensajes(estado);
 
     document.getElementById("iniciarSesion").onclick = function (){
@@ -50,4 +70,52 @@ window.onload = function (){
         return true;
     }
 
+    document.getElementById("registroButton").onclick = function (){
+        crearFormRegistro();
+        document.getElementById("estado").style.display = "none";
+        document.getElementById("estado2").style.display = "none";
+        mostrarMensajes(estado);
+        document.getElementById("Registro").onclick = function (){
+
+            if (document.getElementById("claveUsuario").value === "") {
+                document.getElementById("claveUsuario").focus();
+                alert("Registro incorrecto, clave de usuario vacía");
+                return false;
+            }
+
+            if (document.getElementById("usuarioR").value === "" ) {
+                document.getElementById("usuarioR").focus();
+                alert("Registro incorrecto, debe ingresar su usuario");
+                return false;
+            }
+
+            if (document.getElementById("contrasenaR").value === "" ) {
+                document.getElementById("contrasenaR").focus();
+                alert("Registro incorrecto, debe ingresar su contraseña");
+                return false;
+            }
+            return true;
+        }
+    }
+
+}
+
+function crearFormRegistro(){
+    document.getElementById("formularioInicio").innerHTML =
+        " <form class=\"formulario\" name=\"formularioRegistro\" method=\"post\" action=\"registrar.php\">\n" +
+        "                <p>Clave:</p>\n" +
+        "                <input type=\"text\" class=\"campoTexto\" id=\"claveUsuario\" name=\"clave\"><br><br><br>\n" +
+        "                <p>Usuario:</p>\n" +
+        "                <input type=\"text\" class=\"campoTexto\" id=\"usuario\" name=\"usuarioR\"><br><br><br>\n" +
+        "                <p>Contraseña:</p>\n" +
+        "                <input type=\"password\" class=\"campoTexto\" id=\"contrasena\" name=\"contrasenaR\"><br><br><br>\n" +
+        "                <div id=\"estado\"> "+
+        "                   <img src=\"../img/advertencia.png\" alt=\"ocurre error\">"+
+        "                   <div id=textoEstado></div>"+
+        "               </div>"+
+        "                <p class=\"alinear\">\n" +
+        "                    <input type=\"submit\" id=\"Registro\" class=\"btn\" value=\"Registrarse\">\n" +
+        "                    <br><br><a class='hiper' href=\"redireccionar.php\"> <i class=\"fa-solid fa-arrow-left\"></i>Regresar</a>"+
+        "                </p><br>\n" +
+        "            </form>";
 }
