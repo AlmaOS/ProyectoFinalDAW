@@ -39,6 +39,7 @@ $arrayResult=ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
     <div>
         <div><a href="../servicios.php">Nuevo</a></div>
         <div><input type="submit" name="eliminar" value="Eliminar"></div>
+        <div><a href="recaudaciones.php">Modificar</a></div>
     </div>
     </form>
 </div>
