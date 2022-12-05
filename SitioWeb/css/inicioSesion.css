@@ -92,7 +92,7 @@ a:hover{
     color: #2b6cbb;
 }
 
-#estado {
+#estado, #estado2 {
     background-color: #EEE;
     color: black;
     margin-bottom: 4px;
@@ -103,6 +103,11 @@ a:hover{
 }
 
 #estado > img{
+    height: 25px;
+    width: 25px;
+}
+
+.imgEstado{
     height: 25px;
     width: 25px;
 }
