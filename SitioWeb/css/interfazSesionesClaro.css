@@ -63,7 +63,7 @@ img{
     border-radius: 20%;
     align-content: center;
     justify-content: center;
-
+    margin-top: 30px;
 }
 
 .imgIcon{
@@ -73,6 +73,12 @@ img{
 
 .imgIcon:hover{
     color:#0d47a1;
+}
+
+.textoDiario{
+    text-align: center;
+    font-size: 15pt;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
 .txtIcon{
@@ -101,6 +107,7 @@ img{
     border: none;
     border-radius: 10px;
 }
+
 
 @media screen and (max-width: 1050px){
     .logo{
@@ -138,5 +145,11 @@ img{
 
     .imgIcon{
         size: 80px;
+    }
+}
+
+@media print{
+    body{
+        display: none;
     }
 }

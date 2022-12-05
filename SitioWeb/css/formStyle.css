@@ -10,6 +10,20 @@ body{
     justify-content: center;
 }
 
+.regresar{
+    text-decoration: none;
+    font-size: 20pt;
+    color: white;
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
 .logo{
     width: 10%;
 }
@@ -66,6 +80,34 @@ input{
     border: none;
 }
 
+.botonSubir{
+    text-decoration: none;
+    background-color: #0d47a1;
+    color: white;
+    padding: 10%;
+    border-radius: 15px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+#descargarArchivo{
+    background-color: #0d47a1;
+    color: white;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+}
+
+#guardarArchivo{
+    background-color: #0d47a1;
+    color: white;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+}
+
 #guardar:hover{
     background-color: #A9D6E5;
     border: none;
@@ -86,6 +128,81 @@ label{
 
 .checkConte{
     text-align: left;
+}
+
+#registrosInventario{
+    border: #0d47a1 solid;
+    border-radius: 10px;
+    width: 50px;
+    height: 25px;
+}
+
+#estadoMemoria{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#estado {
+    background-color: #EEE;
+    color: black;
+    margin-bottom: 4px;
+    padding: 4px;
+    align-items:center;
+    justify-content: center;
+    font-size: 13pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#estado > img{
+    height: 25px;
+    width: 25px;
+}
+
+#inforAsistencias{
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+.nuevo{
+    color: black;
+}
+
+.opciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.principal{
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    margin-top: 50px;
+    border-style: solid;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #273f63;
+    color: white;
+}
+
+td{
+    background-color: #bedaff;
+}
+
+td,th{
+    border: 1px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -128,8 +245,36 @@ label{
     }
 }
 
+@media screen and (max-width: 520px) {
+    td,th{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
 @media screen and (max-width: 410px) {
     label{
         margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    td,th{
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    table{
+        font-size: 10pt;
+    }
+}
+
+@media print{
+    body{
+        display: none;
     }
 }

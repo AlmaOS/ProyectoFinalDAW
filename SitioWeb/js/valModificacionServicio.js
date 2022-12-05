@@ -4,46 +4,7 @@ function sumarRecaudaciones(form){
     return suma;
 }
 
-function ocultarPanelEstado(panelEstado) {
-    document.getElementById("estado").style.display = "none";
-}
-
-function mostarMensaje(mensaje){
-    document.getElementById("estado").style.display = "flex";
-    panelEstado = document.getElementById("textoEstado");
-    panelEstado.innerHTML+= mensaje;
-    setTimeout(ocultarPanelEstado, 3000);
-}
-
-function mostrarMensajes(estadosMensajes){
-    partesMensaje = estadosMensajes.split("_");
-    //alert("Mensase 1 es: "+ partesMensaje[0]+" "+ partesMensaje[1]);
-    if (estadosMensajes != "") {
-        switch (partesMensaje[1]) {
-            case '1':
-                mostarMensaje("campos vacios");
-              break;
-            case '2':
-                mostarMensaje("Recaudaciones deben ser números");
-              break;
-            case '3':
-                mostarMensaje("Se ingresó un código maligno");
-            break;
-            case '4':
-                mostarMensaje("Formato fecha incorrecta");
-            break;
-            case '5':
-                mostarMensaje("Ya se ha registrado un servicio con la misma fecha");
-            break;
-            default:
-          }
-    }
-}
-
 window.onload = function(){
-    document.getElementById("estado").style.display = "none";
-    mostrarMensajes(estado);
-
     var detener = true;
 
     document.Frecauds.onsubmit = function () {

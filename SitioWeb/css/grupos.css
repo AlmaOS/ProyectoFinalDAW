@@ -87,6 +87,10 @@ p{
     text-align: center;
 }
 
+.print{
+    display: none;
+}
+
 
 @media screen and (max-width: 765px){
     .contenedor-gal{
@@ -106,6 +110,23 @@ p{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(12,1fr);
+    }
+}
+
+@media print{
+    .print{
+        display: block;
+        color: black;
+        font-weight: bold;
+        font-size: 20pt;
+    }
+
+    header{
+        display: none;
+    }
+
+    .contenedor-gal{
+        display: none;
     }
 }
 

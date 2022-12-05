@@ -64,7 +64,7 @@ img{
     border-radius: 20%;
     align-content: center;
     justify-content: center;
-
+    margin-top: 30px;
 }
 
 .imgIcon{
@@ -74,6 +74,13 @@ img{
 
 .imgIcon:hover{
     color:#001845;
+}
+
+.textoDiario{
+    text-align: center;
+    font-size: 15pt;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    color: white;
 }
 
 .txtIcon{
@@ -135,5 +142,11 @@ img{
 
     .ícono{
         width: 35%;
+    }
+}
+
+@media print{
+    body{
+        display: none;
     }
 }
