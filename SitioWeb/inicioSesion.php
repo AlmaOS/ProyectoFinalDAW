@@ -1,14 +1,43 @@
+<?php
+  if(isset($_REQUEST["error"])){
+    switch ($_REQUEST["error"]) {
+      case 1:
+          $cadena = "Error._1";
+          break;
+      case 2:
+          $cadena = "Error._2";
+          break;
+      case 3:
+          $cadena = "Error._3";
+          break;
+      case 4:
+          $cadena = "Error._4";
+          break;
+      case 5:
+          $cadena = "Error._5";
+          break;
+      default:
+        $cadena = "";
+    }
+  }else{
+    $cadena = "";
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Inicio de Sesión</title>
-    <link rel="shortcut icon" href="img/logoIcono.ico">
+    <link rel="shortcut icon" href="../img/logoIcono.ico">
     <link rel="stylesheet" href="../css/inicioSesion.css">
     <link rel="stylesheet" href="../css/barraPie.css">
     <script src="https://kit.fontawesome.com/32587f35af.js" crossorigin="anonymous"></script>
     <script src="../js/inicioSesion.js"></script>
+    <script>
+	    <?php echo "var estado = '" . $cadena . "';"; ?>
+    </script>
   </head>
   <body>
     <nav class="barraNavegacion">
@@ -45,8 +74,16 @@
             <p class="alinear">
               <input type="submit" id="iniciarSesion" class="btn" value="Iniciar Sesión">
             </p><br>
+            <div id="estado">
+              <img src="../img/advertencia.png" alt="ocurre error">
+              <div id=textoEstado></div>
+            </div>
+            <div id="estado2">
+                <img class="imgEstado" src="../img/registrado.png" alt="Registro correcto">
+                <div id=textoEstado2></div>
+            </div>
             <p class="alinear">
-              <a href="#" class="hiper">Registrarse </a> &nbsp; si aún no tiene cuenta
+              <a href="#" class="hiper" id="registroButton">Registrarse </a> &nbsp; si aún no tiene cuenta
             </p>
           </form>
         </div>
@@ -62,9 +99,9 @@
         <li><a class="pieLista" href="#">Iglesia Manantial de vida. Campus Mérida</a></li>
       </ul></div>
       <div class="borderEsp"><ul class="navPie">
-        <li><a class="pieLista" href="sobreNosotros.html" class="">Sobre Nosotros</a></li>
-        <li><a class="pieLista" href="contacto.html" class="">Contacto</a></li>
-        <li><a class="pieLista" href="grupos.html" class="">Grupos</a></li>
+        <li><a class="pieLista" href="../sobreNosotros.html" class="">Sobre Nosotros</a></li>
+        <li><a class="pieLista" href="../contacto.html" class="">Contacto</a></li>
+        <li><a class="pieLista" href="../grupos.html" class="">Grupos</a></li>
         <li><a class="pieLista" href="Sesion/redireccionar.php" class="">Inicio de Sesión</a></li>
       </ul></div>
       <div class="gap">qqq</div>

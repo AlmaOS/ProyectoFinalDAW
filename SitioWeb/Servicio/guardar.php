@@ -1,18 +1,7 @@
 <?php
     include("../variables.php");
 
-    if (validarNumeros($_REQUEST["fecha"]) || validarNumeros($_REQUEST["ofrendas"]) || validarNumeros($_REQUEST["diezmo"]) 
-    || validarNumeros($_REQUEST["ninios"]) || validarNumeros($_REQUEST["prejuveniles"]) || validarNumeros($_REQUEST["adultos"])) 
-    {
-        header("location: ../servicios.html?error=1");
-        exit();
-    }
-
-    if(!is_numeric($_REQUEST["ofrendas"]) || !is_numeric($_REQUEST["diezmo"]) ||!is_numeric($_REQUEST["ninios"])
-    || !is_numeric($_REQUEST["prejuveniles"]) || !is_numeric($_REQUEST["adultos"])){
-        header("location: ../servicios.html?error=2");
-        exit();
-    }
+    validarEntradas();
 
     $date = filter_var($_REQUEST["fecha"], FILTER_SANITIZE_STRING);
     $ofrend = filter_var($_REQUEST["ofrendas"], FILTER_SANITIZE_STRING);
@@ -36,12 +25,12 @@
     $adultos = mysqli_real_escape_string($conexion, $adulto);
 
     if (empty($fecha) || validarNumeros($ofrendas) || validarNumeros($diezmo) || validarNumeros($ninieos) || validarNumeros($prejuveniles) || validarNumeros($adultos)) {
-        header("location: ../servicios.html?error=3");
+        header("location: ../servicios.php?error=3");
         exit();
     }
 
     if(!validarFecha($fecha)){
-        header("location: ../servicios.html?error=4");
+        header("location: ../servicios.php?error=4");
         echo $fecha;
         exit();
     }
@@ -50,10 +39,18 @@
     $totalRecaudaciones = $ofrendas + $diezmo;
 
     $sql = "INSERT INTO	servicio (Fecha, Ofrenda, Diezmo, TotalRecaudaciones, Tipo, AsisNinios, AsisPrejus, AsisAdultos) VALUES ('" . $fecha . "', '" . $ofrendas . "', '" . $diezmo . "', '".$totalRecaudaciones."', '".$tipoServicio."', '".$ninieos."', '".$prejuveniles."', '".$adultos."')";
-    $resultado = mysqli_query($conexion, $sql);
+    
+    try {
+        $resultado = mysqli_query($conexion, $sql);
+    } catch(Exception $e) {
+        mysqli_close($conexion);
+        header("location: ../servicios.php?error=5");
+        exit();
+    }
+
 	mysqli_close($conexion);
 
-    header("location: ../servicios.html?correcto=1?");
+    header("location: ../servicios.php?correcto=1");
     exit();
 
     function validarFecha($fecha){
@@ -90,6 +87,29 @@
             else{
                 return true;
             }
+        }
+    }
+
+    function validarEntradas(){
+        if (!isset($_REQUEST["fecha"]) || !isset($_REQUEST["ofrendas"]) || !isset($_REQUEST["diezmo"]) 
+        || !isset($_REQUEST["ninios"]) || !isset($_REQUEST["prejuveniles"]) || !isset($_REQUEST["adultos"])) 
+        {
+            header("location: ../servicios.php?error=1");
+            exit();
+        }
+
+
+        if (validarNumeros($_REQUEST["fecha"]) || validarNumeros($_REQUEST["ofrendas"]) || validarNumeros($_REQUEST["diezmo"]) 
+        || validarNumeros($_REQUEST["ninios"]) || validarNumeros($_REQUEST["prejuveniles"]) || validarNumeros($_REQUEST["adultos"])) 
+        {
+            header("location: ../servicios.php?error=1");
+            exit();
+        }
+    
+        if(!is_numeric($_REQUEST["ofrendas"]) || !is_numeric($_REQUEST["diezmo"]) ||!is_numeric($_REQUEST["ninios"])
+        || !is_numeric($_REQUEST["prejuveniles"]) || !is_numeric($_REQUEST["adultos"])){
+            header("location: ../servicios.php?error=2");
+            exit();
         }
     }
 ?>

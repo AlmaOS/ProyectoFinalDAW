@@ -80,6 +80,22 @@ input{
     border: none;
 }
 
+#descargarArchivo{
+    background-color: #0d47a1;
+    color: white;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+}
+
+#guardarArchivo{
+    background-color: #0d47a1;
+    color: white;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+}
+
 #guardar:hover{
     background-color: #A9D6E5;
     border: none;
@@ -100,6 +116,35 @@ label{
 
 .checkConte{
     text-align: left;
+}
+
+#registrosInventario{
+    border: #0d47a1 solid;
+    border-radius: 10px;
+    width: 50px;
+    height: 25px;
+}
+
+#estadoMemoria{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#estado {
+    background-color: #EEE;
+    color: black;
+    margin-bottom: 4px;
+    padding: 4px;
+    align-items:center;
+    justify-content: center;
+    font-size: 13pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#estado > img{
+    height: 25px;
+    width: 25px;
 }
 
 @media screen and (max-width: 1200px) {

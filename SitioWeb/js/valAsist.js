@@ -1,4 +1,38 @@
+function ocultarPanelEstado(panelEstado) {
+    document.getElementById("estado").style.display = "none";
+}
+
+function mostarMensaje(mensaje){
+    document.getElementById("estado").style.display = "flex";
+    panelEstado = document.getElementById("textoEstado");
+    panelEstado.innerHTML+= mensaje;
+    setTimeout(ocultarPanelEstado, 3000);
+}
+
+function mostrarMensajes(estadosMensajes){
+    partesMensaje = estadosMensajes.split("_");
+    //alert("Mensase 1 es: "+ partesMensaje[0]+" "+ partesMensaje[1]);
+    if (estadosMensajes != "") {
+        switch (partesMensaje[1]) {
+            case '1':
+                mostarMensaje("campos vacios");
+              break;
+            case '2':
+                mostarMensaje("Formato incorrecto de fecha u hora");
+              break;
+            case '3':
+                mostarMensaje("Ya hay una asistencia guardada");
+            break;
+            default:
+          }
+    }
+}
+
 window.onload=function(){
+
+    document.getElementById("estado").style.display = "none";
+    mostrarMensajes(estado);
+
     document.getElementById("guardar").onclick=function(){
         if(Fasist.fecha.value==""){
             alert("No seleccionó la fecha");
@@ -38,7 +72,7 @@ window.onload=function(){
                     return false;
                 }
                 if(tiempo[1]<0 || tiempo[1]>60){
-                    alert("La hora es inválida+22");
+                    alert("La hora es inválida");
                     Fasist.hora.select();
                     return false;
                 }

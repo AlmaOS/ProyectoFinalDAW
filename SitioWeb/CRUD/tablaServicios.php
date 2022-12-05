@@ -37,7 +37,7 @@ $arrayResult=ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
     <form action="eliminar.php" method="post">
     <?=mostrarInfoServicios($arrayResult);?>
     <div>
-        <div><a href="../servicios.html">Nuevo</a></div>
+        <div><a href="../servicios.php">Nuevo</a></div>
         <div><input type="submit" name="eliminar" value="Eliminar"></div>
         <div><a href="recaudaciones.php">Modificar</a></div>
     </div>
