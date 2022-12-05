@@ -24,21 +24,10 @@ function validarCuenta(form){
         form.celular.select();
         return false;
     }
-    if(form.edad.value==""){
-        alert("Edad inválida");
-        form.edad.select();
-        return false;
-    }
     if(isNaN(form.edad.value)){
         alert("Edad inválida");
         form.edad.select();
         return false;
-    }else{
-        if(form.edad.value>90||form.edad.value<1){
-            alert("Edad inválida");
-            form.edad.select();
-            return false;
-        }
     }
     if(form.grupos.value==""){
         alert("No seleccionó un grupo");
