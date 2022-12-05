@@ -22,7 +22,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <title>Servicios</title>
+        <title>Cuentas</title>
         <link rel="shortcut icon" href="../img/logoIcono.ico">
         <link rel="stylesheet" href="../css/formStyle.css">
     </head>
