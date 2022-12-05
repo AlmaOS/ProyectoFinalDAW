@@ -21,7 +21,7 @@ function llenarSeleccion($array){
     <title>Recaudaciones</title>
     <link rel="shortcut icon" href="../img/logoIcono.ico">
     <link rel="stylesheet" href="../css/formStyle.css">
-    <script src="../js/valRecaudacion.js"></script>
+    <script src="../js/valModificacionServicio.js"></script>
   </head>
   <body>
     <div>
