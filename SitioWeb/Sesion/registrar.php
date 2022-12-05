@@ -16,7 +16,7 @@
     }
 
     include("../funciones.php");
-    $sentenciaSQL = "SELECT ClvUsuario FROM usuario";
+    $sentenciaSQL = "SELECT ClvUsuario, NombreUsu, contrasena FROM usuario";
     $registros = ConsultarSQL($servidor, $usuario, $contrasena, $basedatos, $sentenciaSQL);
     $numerosEntidades = count($registros);
 
@@ -31,12 +31,30 @@
         return $encontrado;
     }
 
+    function usuarioRegistrado($numerosEntidades,$registros,$claveUser){
+        $registrado = true;
+        for($i=0;$i<$numerosEntidades;$i++){
+          if($registros[$i]["NombreUsu"] == $claveUser."_vida"){
+              if($registros[$i]["contrasena"] == $claveUser."_vida"){
+                  $registrado = false;
+                  break;
+              }
+          }
+        }
+        return $registrado;
+    }
+
     $clvEncontrada = buscarClave($numerosEntidades,$registros,$claveUser);
+    $userRegistrado = usuarioRegistrado($numerosEntidades,$registros,$claveUser);
     if($clvEncontrada){
-        $sql = "UPDATE usuario SET NombreUsu='".$user."', contrasena='".$contra."' WHERE ClvUsuario='".$claveUser."'";
-        $resultado = mysqli_query($conexion, $sql);
-        mysqli_close($conexion);
-        header("location:redireccionar.php?error=5");
+        if(!$userRegistrado){
+            $sql = "UPDATE usuario SET NombreUsu='".$user."', contrasena='".$contra."' WHERE ClvUsuario='".$claveUser."'";
+            $resultado = mysqli_query($conexion, $sql);
+            mysqli_close($conexion);
+            header("location:redireccionar.php?error=5");
+        }else{
+            header("location:redireccionar.php?error=6");
+        }
     }else{
         header("location:redireccionar.php?error=4");
     }

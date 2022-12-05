@@ -16,6 +16,9 @@
       case 5:
           $cadena = "Error._5";
           break;
+      case 6:
+          $cadena = "Error._6";
+          break;
       default:
         $cadena = "";
     }
