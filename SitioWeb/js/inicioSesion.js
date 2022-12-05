@@ -45,6 +45,13 @@ function mostrarMensajes(estadosMensajes){
                 panelEstado = document.getElementById("textoEstado2");
                 panelEstado.innerHTML+= "Se ha registrado correctamente, inicie sesión";
                 setTimeout(ocultarPanelEstado2, 5000);
+                break;
+            case '6':
+                crearFormRegistro();
+                document.getElementById("estado").style.display = "flex";
+                panelEstado = document.getElementById("textoEstado");
+                panelEstado.innerHTML+= "Este usuario ya ha sido registrado anteriormente, inicie sesión";
+                setTimeout(ocultarPanelEstado, 5000);
             default:
           }
     }

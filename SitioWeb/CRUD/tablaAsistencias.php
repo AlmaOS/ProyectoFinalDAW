@@ -15,7 +15,7 @@
     }
 
     function mostrarAsistencias($array){
-        echo "<table border><tr><th>Fecha</th><th>Nombre</th><th>Apellido</th><th>Rol</th><th>Ministerio</th></tr>";
+        echo "<table><tr><th>Fecha</th><th>Nombre</th><th>Apellido</th><th>Rol</th><th>Ministerio</th></tr>";
         for ($i = 0; $i < count($array); $i++) {
             echo "<tr>";
             echo "<td>" . $array[$i]["Fecha"] . "</td><td>" . $array[$i]["Nombre"] . "</td><td>" . $array[$i]["APaterno"] . "</td>";
