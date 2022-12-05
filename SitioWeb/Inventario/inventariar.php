@@ -63,14 +63,4 @@
     exit();
 
 
-    function validarFecha($fecha){
-        //Año - mes - dia
-        //parametros de checkDate
-        // mes, dia y año
-        $valores = explode('-', $fecha);
-        if(count($valores) == 3 && checkdate($valores[1], $valores[2], $valores[0])){
-            return true;
-        }
-        return false;
-    }
 ?>
