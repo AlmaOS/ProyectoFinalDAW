@@ -102,7 +102,7 @@
         <li><a class="pieLista" href="../sobreNosotros.html" class="">Sobre Nosotros</a></li>
         <li><a class="pieLista" href="../contacto.html" class="">Contacto</a></li>
         <li><a class="pieLista" href="../grupos.html" class="">Grupos</a></li>
-        <li><a class="pieLista" href="Sesion/redireccionar.php" class="">Inicio de Sesión</a></li>
+        <li><a class="pieLista" href="../Sesion/redireccionar.php" class="">Inicio de Sesión</a></li>
       </ul></div>
       <div class="gap">qqq</div>
     </div>
