@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en" xmlns:for="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
@@ -17,13 +17,12 @@
     </div>
     <div class="content">
       <div class="form">
-        <form name="Fcuenta">
+        <form name="Fcuenta" method=post action="Cuenta/registrar.php">
           Nombre:<input type="text" name="nombre">
           <br>*Si se tienen dos nombres, ingresar ambos<br><br>
           Apellido paterno: <input type="text" name="apellidoP"><br><br>
           Apellido materno: <input type="text" name="apellidoM"><br><br>
           Celular: <input type="text" name="celular"><br><br>
-          Edad: <input type="text" name="edad"><br><br>
           Grupo: <select name="grupos">
                     <option value=""></option>
                     <option value="Iglekids">Iglekids</option>
@@ -35,8 +34,11 @@
                  </select>
           <br><br>Posición:
           <input type="radio" name="posicion" value="lider">Líder
-          <input type="radio" name="posicion" value="Integrante">Integrante
-          <br><br><br><input type="button" id="guardar" value="Guardar">
+          <input type="radio" name="posicion" value="integrante">Integrante
+            <br><br>Ministerio:
+            <input type="radio" name="ministerio" value="Alabanza">Alabanza
+            <input type="radio" name="ministerio" value="Voluntariado">Voluntariado
+          <br><br><br><input type="submit" id="guardar" value="Guardar">
         </form>
       </div>
     </div>

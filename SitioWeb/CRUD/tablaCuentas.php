@@ -23,13 +23,11 @@ function mostrarInfoCuentas($array){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Inicio</title>
-    <link rel="shortcut icon" href="img/logoIcono.ico">
-    <script src="js/EstiloInterfaz.js"></script>
-    <script src="https://kit.fontawesome.com/c3722043f9.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../img/logoIcono.ico">
 </head>
 <body>
 <div class="header">
-    <div class="logo"><a href="index.html"><img src="img/logoIglesiaBlanco.png" alt="logo"></a></div>
+    <div class="logo"><a href="../index.html"><img src="../img/logoIglesiaBlanco.png" alt="logo"></a></div>
     <div class="headTxt"><div class="titulo">Manantial de vida</div>
         <div class="subtitulo">Cuentas</div></div>
 </div>
@@ -38,7 +36,7 @@ function mostrarInfoCuentas($array){
         <input type="hidden" name="filtro" value="Cuentas">
         <?=mostrarInfoCuentas($arrayResult);?>
         <div>
-            <div><a href="../cuentas.html">Nuevo</a></div>
+            <div><a href="../cuentas.php">Nuevo</a></div>
             <div><input type="submit" name="eliminar" value="Eliminar"></div>
             <div><a href="infoCuentas.php">Modificar</a></div>
         </div>
