@@ -2,7 +2,7 @@
  include("../variables.php");
  include("../funciones.php");
 
-$sql = "SELECT Fecha,Ofrenda,Diezmo,TotalRecaudaciones,AsisNinios,AsisPrejus,AsisAdultos FROM servicio";
+$sql = "SELECT * FROM serviciosmv";
 $arrayResult=ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
 
  function mostrarInfoServicios($array){
