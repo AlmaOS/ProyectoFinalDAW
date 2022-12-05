@@ -150,7 +150,9 @@ label{
 #inforAsistencias{
     display: flex;
     justify-content: center;
+    overflow-x: auto;
 }
+
 table{
     margin-top: 50px;
     border-style: solid;
@@ -216,9 +218,31 @@ td,th{
     }
 }
 
+@media screen and (max-width: 520px) {
+    td,th{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
 @media screen and (max-width: 410px) {
     label{
         margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    td,th{
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    table{
+        font-size: 10pt;
     }
 }
 
