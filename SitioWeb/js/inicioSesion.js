@@ -1,5 +1,7 @@
 function ocultarPanelEstado(panelEstado) {
     document.getElementById("estado").style.display = "none";
+}
+function ocultarPanelEstado2(panelEstado) {
     document.getElementById("estado2").style.display = "none";
 }
 
@@ -38,7 +40,7 @@ function mostrarMensajes(estadosMensajes){
                 document.getElementById("estado2").style.display = "flex";
                 panelEstado = document.getElementById("textoEstado2");
                 panelEstado.innerHTML+= "Se ha registrado correctamente, inicie sesión";
-                setTimeout(ocultarPanelEstado, 5000);
+                setTimeout(ocultarPanelEstado2, 5000);
             default:
           }
     }

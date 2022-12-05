@@ -30,7 +30,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Inicio de Sesión</title>
-    <link rel="shortcut icon" href="img/logoIcono.ico">
+    <link rel="shortcut icon" href="../img/logoIcono.ico">
     <link rel="stylesheet" href="../css/inicioSesion.css">
     <link rel="stylesheet" href="../css/barraPie.css">
     <script src="https://kit.fontawesome.com/32587f35af.js" crossorigin="anonymous"></script>
