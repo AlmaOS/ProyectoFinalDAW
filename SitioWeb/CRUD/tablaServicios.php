@@ -35,7 +35,8 @@ $arrayResult=ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
 </div>
 <div class="principal">
     <form action="eliminar.php" method="post">
-    <?=mostrarInfoServicios($arrayResult);?>
+        <input type="hidden" name="filtro" value="Servicios">
+        <?=mostrarInfoServicios($arrayResult);?>
     <div>
         <div><a href="../servicios.php">Nuevo</a></div>
         <div><input type="submit" name="eliminar" value="Eliminar"></div>

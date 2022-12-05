@@ -35,6 +35,7 @@ function mostrarInfoCuentas($array){
 </div>
 <div class="principal">
     <form action="eliminar.php" method="post">
+        <input type="hidden" name="filtro" value="Cuentas">
         <?=mostrarInfoCuentas($arrayResult);?>
         <div>
             <div><a href="../cuentas.html">Nuevo</a></div>
