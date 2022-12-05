@@ -5,6 +5,10 @@ function ocultarPanelEstado2(panelEstado) {
     document.getElementById("estado2").style.display = "none";
 }
 
+function isDOM(Obj) {
+   return Obj instanceof Element;
+}
+
 function mostrarMensajes(estadosMensajes){
     partesMensaje = estadosMensajes.split("_");
     //alert("Mensase 1 es: "+ partesMensaje[0]+" "+ partesMensaje[1]);
@@ -54,52 +58,61 @@ window.onload = function (){
         navMenu.classList.toggle("menuDesplegable")
     });
     document.getElementById("estado").style.display = "none";
-    document.getElementById("estado2").style.display = "none";
+    div = document.getElementById("estado2");
+    if (isDOM(div)){
+        document.getElementById("estado2").style.display = "none";
+    }
     mostrarMensajes(estado);
 
-    document.getElementById("iniciarSesion").onclick = function (){
-        if (document.getElementById("usuario").value === "" ) {
-            document.getElementById("usuario").focus();
-            alert("Usuario vacío");
-            return false;
-        }
-
-        if (document.getElementById("contrasena").value === "" ) {
-            document.getElementById("contrasena").focus();
-            alert("Contraseña vacía");
-            return false;
-        }
-        return true;
-    }
-
-    document.getElementById("registroButton").onclick = function (){
-        crearFormRegistro();
-        document.getElementById("estado").style.display = "none";
-        document.getElementById("estado2").style.display = "none";
-        mostrarMensajes(estado);
-        document.getElementById("Registro").onclick = function (){
-
-            if (document.getElementById("claveUsuario").value === "") {
-                document.getElementById("claveUsuario").focus();
-                alert("Registro incorrecto, clave de usuario vacía");
+    div2 = document.getElementById("iniciarSesion");
+    if (isDOM(div2)){
+        document.getElementById("iniciarSesion").onclick = function (){
+            if (document.getElementById("usuario").value === "" ) {
+                document.getElementById("usuario").focus();
+                alert("Usuario vacío");
                 return false;
             }
-
-            if (document.getElementById("usuarioR").value === "" ) {
-                document.getElementById("usuarioR").focus();
-                alert("Registro incorrecto, debe ingresar su usuario");
-                return false;
-            }
-
-            if (document.getElementById("contrasenaR").value === "" ) {
-                document.getElementById("contrasenaR").focus();
-                alert("Registro incorrecto, debe ingresar su contraseña");
+    
+            if (document.getElementById("contrasena").value === "" ) {
+                document.getElementById("contrasena").focus();
+                alert("Contraseña vacía");
                 return false;
             }
             return true;
         }
     }
 
+    div3 = document.getElementById("registroButton");
+    if (isDOM(div3)){
+        document.getElementById("registroButton").onclick = function (){
+            crearFormRegistro();
+            document.getElementById("estado").style.display = "none";
+            //document.getElementById("estado2").style.display = "none";
+            mostrarMensajes(estado);
+            document.getElementById("Registro").onclick = function (){
+    
+                if (document.getElementById("claveUsuario").value === "") {
+                    document.getElementById("claveUsuario").focus();
+                    alert("Registro incorrecto, clave de usuario vacía");
+                    return false;
+                }
+    
+                if (document.getElementById("usuarioR").value === "" ) {
+                    document.getElementById("usuarioR").focus();
+                    alert("Registro incorrecto, debe ingresar su usuario");
+                    return false;
+                }
+    
+                if (document.getElementById("contrasenaR").value === "" ) {
+                    document.getElementById("contrasenaR").focus();
+                    alert("Registro incorrecto, debe ingresar su contraseña");
+                    return false;
+                }
+                return true;
+            }
+        }
+    }
+    
 }
 
 function crearFormRegistro(){
