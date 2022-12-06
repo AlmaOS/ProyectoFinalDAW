@@ -23,13 +23,18 @@ include("../funciones.php");
     $posicion = mysqli_real_escape_string($conexion, $posicion);
     $minis = mysqli_real_escape_string($conexion, $minis);
 
+    if (empty($nombre) || empty($apellidoP) || empty($apellidoM) || empty($celular) || empty($posicion) || empty($minis)) {
+        header("location: ../cuentas.php?error=2");
+        exit();
+    }
+
     if(!is_numeric($celular)){
         header("location: ../cuentas.php?error=2");
         exit();
     }
 
-    $rol=guardarRol($posicion);
-    $ministerio=guardarMinisterio($minis);
+    $rol = guardarRol($posicion);
+    $ministerio = guardarMinisterio($minis);
 
     $sql="SELECT ClvUsuario FROM usuario";
 
@@ -45,8 +50,8 @@ include("../funciones.php");
     $noRegistros=count($registros);
     $id=$registros[$noRegistros-1]["ClvUsuario"]+1;
 
-    $sql="INSERT INTO usuario (ClvUsuario, rol, Nombre, APaterno, AMaterno, Celular,Ministerio) VALUES('";
-    $sql.=$id."','".$rol."','".$nombre."','".$apellidoP."','".$apellidoM."','".$celular."','".$ministerio."')";
+    $sql="INSERT INTO usuario (rol, Nombre, APaterno, AMaterno, Celular,Ministerio) VALUES('";
+    $sql.=$rol."','".$nombre."','".$apellidoP."','".$apellidoM."','".$celular."','".$ministerio."')";
 
     try {
         $resultado = mysqli_query($conexion, $sql);
@@ -65,7 +70,9 @@ include("../funciones.php");
         exit();
     }
 
-    $sql="UPDATE usuario SET NombreUsu='".$id."_vida', contrasena='".$id."_vida' WHERE nombre='".$nombre."'AND Apaterno='".$apellidoP."'";
+    for ($registros = array (); $fila = mysqli_fetch_assoc($resultado); $registros[] = $fila);
+    $claveUsuario = $registros[0]["ClvUsuario"];
+    $sql="UPDATE usuario SET NombreUsu='".$claveUsuario."_vida', contrasena='".$claveUsuario."_vida' WHERE nombre='".$nombre."'AND Apaterno='".$apellidoP."'";
     try {
         $resultado = mysqli_query($conexion, $sql);
     }catch(Exception $e) {

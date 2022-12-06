@@ -6,7 +6,7 @@ $sql = "SELECT NombreUsu from usuario";
 $array= ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
 
 function llenarSeleccion($array){
-    echo "<select name='usuario'>";
+    echo "<select name='usuario' id='usuarioSelect'>";
     echo "<option value=''></option>";
     for ($i = 0; $i < count($array); $i++){
         echo "<option value='".$array[$i]["NombreUsu"]."'>".$array[$i]["NombreUsu"]."</option>";
@@ -21,7 +21,7 @@ function llenarSeleccion($array){
     <title>Cuentas</title>
     <link rel="shortcut icon" href="../img/logoIcono.ico">
     <link rel="stylesheet" href="../css/formStyle.css">
-    <script src="js/valCuenta.js"></script>
+    <script src="../js/valModificacionCuenta.js"></script>
 </head>
 <body>
 <div>
@@ -29,10 +29,11 @@ function llenarSeleccion($array){
         <div class="logo"><a href="../index.html"><img src="../img/logoIglesiaBlanco.png" alt="logo"></a></div>
         <div class="headTxt"><div class="titulo">Manantial de vida</div>
             <div class="subtitulo">Cuentas</div></div>
+            <div class="regresar"><a href="tablaCuentas.php">Regresar</a></div>
     </div>
     <div class="content">
-        <div class="form">
-            <form name="info" method="post" action="modificar.php">
+        <div class="form">                         <!--modificar.php-->
+            <form name="info" method="post" action="hola.php">
                 Usuario: <?=llenarSeleccion($array)?>
                 <br><br>Nombre:<input type="text" name="nombre">
                 <br>*Si se tienen dos nombres, ingresar ambos<br><br>
