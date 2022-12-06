@@ -29,7 +29,7 @@ function llenarSeleccion($array){
         <div class="logo"><a href="../index.html"><img src="../img/logoIglesiaBlanco.png" alt="logo"></a></div>
         <div class="headTxt"><div class="titulo">Manantial de vida</div>
           <div class="subtitulo">Recaudaciones</div></div>
-          <div class="regresar"><a href="../Sesion/redireccionar.php">Regresar</a></div>
+          <div class="regresar"><a href="tablaServicios.php">Regresar</a></div>
       </div>
       <div class="content">
         <div class="form">

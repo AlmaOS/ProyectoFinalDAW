@@ -41,10 +41,13 @@ function mostrarMensajes(estadosMensajes){
                 setTimeout(ocultarPanelEstado, 5000);
                 break;
             case '5':
-                document.getElementById("estado2").style.display = "flex";
-                panelEstado = document.getElementById("textoEstado2");
-                panelEstado.innerHTML+= "Se ha registrado correctamente, inicie sesión";
-                setTimeout(ocultarPanelEstado2, 5000);
+                div = document.getElementById("estado2");
+                if (isDOM(div)){
+                    document.getElementById("estado2").style.display = "flex";
+                    panelEstado = document.getElementById("textoEstado2");
+                    panelEstado.innerHTML+= "Se ha registrado correctamente, inicie sesión";
+                    setTimeout(ocultarPanelEstado2, 5000);
+                }
                 break;
             case '6':
                 crearFormRegistro();
