@@ -10,8 +10,8 @@ $arrayResult=ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
      echo "<tr><th>Ofrenda</th><th>Diezmo</th><th>Total</th><th>Niños</th><th>Prejóvenes</th><th>Adultos</th></tr>";
      for ($i = 0; $i < count($array); $i++) {
          echo "<tr><td><input type='checkbox' name='servicios[]' value='".$array[$i]["Fecha"]."'></td>";
-         echo "<td>" . $array[$i]["Fecha"] . "</td><td>" . $array[$i]["ofrenda"] . "</td><td>" . $array[$i]["diezmo"] . "</td>";
-         echo "<td>" . $array[$i]["totalRecaudaciones"] . "</td><td>" . $array[$i]["asisNinios"] . "</td><td>" . $array[$i]["asisPrejus"] . "</td><td>" . $array[$i]["asisAdultos"] . "</td>";
+         echo "<td>" . $array[$i]["Fecha"] . "</td><td>" . $array[$i]["Ofrenda"] . "</td><td>" . $array[$i]["Diezmo"] . "</td>";
+         echo "<td>" . $array[$i]["TotalRecaudaciones"] . "</td><td>" . $array[$i]["AsisNinios"] . "</td><td>" . $array[$i]["AsisPrejus"] . "</td><td>" . $array[$i]["AsisAdultos"] . "</td>";
          echo "</tr>";
      }
      echo "</table><br>";
