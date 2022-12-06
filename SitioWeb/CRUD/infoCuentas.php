@@ -33,7 +33,8 @@ function llenarSeleccion($array){
     </div>
     <div class="content">
         <div class="form">                         <!--modificar.php-->
-            <form name="info" method="post" action="hola.php">
+            <form name="info" method="post" action="modificar.php">
+                <input type="hidden" name="filtro" value="cuentas">
                 Usuario: <?=llenarSeleccion($array)?>
                 <br><br>Nombre:<input type="text" name="nombre">
                 <br>*Si se tienen dos nombres, ingresar ambos<br><br>

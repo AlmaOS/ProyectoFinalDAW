@@ -2,5 +2,5 @@
     $servidor = "localhost:3306";
     $usuario = "root";
     $contrasena = "";
-    $basedatos = "proyectowebb";
+    $basedatos = "proyectowebact";
 ?>

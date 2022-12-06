@@ -6,7 +6,7 @@ $sql = "SELECT Fecha from servicio";
 $array= ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
 
 function llenarSeleccion($array){
-    echo "<select name='fechaServs'>";
+    echo "<select name='fechaServs' id='fechaSelec'>";
     echo "<option value=''></option>";
     for ($i = 0; $i < count($array); $i++){
         echo "<option value='".$array[$i]["Fecha"]."'>".$array[$i]["Fecha"]."</option>";
@@ -34,6 +34,7 @@ function llenarSeleccion($array){
       <div class="content">
         <div class="form">
           <form name="Frecauds" method="post" action="modificar.php">
+              <input type="hidden" name="filtro" value="servicios">
             Fecha de Servicio:
             <?=llenarSeleccion($array);?>
             <br><br>
