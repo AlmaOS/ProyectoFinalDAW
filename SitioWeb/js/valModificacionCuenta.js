@@ -34,8 +34,8 @@ function validarCuenta(form){
     }
 
     cel = form.celular.value;
-    if(cel.length >10 ){
-        alert("Celular inválido, es mayor a 10 numeros");
+    if(cel.length >10 || cel.length<10){
+        alert("Celular inválido por longitud");
         form.celular.select();
         return false;
     }
