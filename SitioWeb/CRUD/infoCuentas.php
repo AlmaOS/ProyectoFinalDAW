@@ -13,6 +13,10 @@ function llenarSeleccion($array){
     }
     echo "</select>";
 }
+
+    $sql = "SELECT NombreUsu, Nombre, APaterno, AMaterno, Celular from usuario";
+    $arrayUsuarios= ConsultarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
+    $arreglo = json_encode($arrayUsuarios);
 ?>
 <html lang="en" xmlns:for="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,6 +26,12 @@ function llenarSeleccion($array){
     <link rel="shortcut icon" href="../img/logoIcono.ico">
     <link rel="stylesheet" href="../css/formStyle.css">
     <script src="../js/valModificacionCuenta.js"></script>
+    
+    <script>
+	        <?php echo "var usuarioJSON = '" . $arreglo . "';"; ?>
+            <?php echo "var arregloUsuario = JSON.parse(usuarioJSON);"; ?>
+    </script>
+    
 </head>
 <body>
 <div>

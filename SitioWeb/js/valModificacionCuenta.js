@@ -41,8 +41,26 @@ function validarCuenta(form){
     }
 }
 
+function mostrarPantalla(arregloUsuario, form){
+    auxArray = [].concat(arregloUsuario)
+    var x = document.getElementById("usuarioSelect");
+    opcion =  x.options[x.selectedIndex].text;
+    if(opcion!= ""){
+        const resultado = auxArray.find( element => element.NombreUsu === opcion );
+        form.nombre.value = resultado.Nombre;
+        form.apellidoP.value = resultado.APaterno;
+        form.apellidoM.value = resultado.AMaterno;
+        form.celular.value = resultado.Celular;
+    }
+    
+}
+
 window.onload=function(){
     document.getElementById("guardar").onclick=function(){
         return validarCuenta(info);
+    }
+
+    document.getElementById("usuarioSelect").onchange = function(){ 
+        mostrarPantalla(arregloUsuario, info);
     }
 }
