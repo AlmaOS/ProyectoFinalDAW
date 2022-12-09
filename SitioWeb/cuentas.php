@@ -27,7 +27,12 @@ if($error==1){
     <link rel="shortcut icon" href="img/logoIcono.ico">
     <link rel="stylesheet" href="css/formStyle.css">
     <script src="js/valCuenta.js"></script>
-    <script><? echo $cadena?></script>
+    <script>
+      <?php 
+        if(isset($cadena))
+          echo "$cadena;";
+      ?>
+    </script>
 </head>
 <body>
   <div>
@@ -42,8 +47,12 @@ if($error==1){
         <form name="Fcuenta" method="post" action="Cuenta/registrar.php">
           Nombre:<input type="text" name="nombre">
           <br>*Si se tienen dos nombres, ingresar ambos<br><br>
+          <label class="ModificaUsuario">
           Apellido paterno: <input type="text" name="apellidoP"><br><br>
+          </label>
+          <label class="ModificaUsuario">
           Apellido materno: <input type="text" name="apellidoM"><br><br>
+          </label>
           Celular: <input type="text" name="celular"><br><br>
           Grupo: <select name="grupos" id="grupoSelec">
                     <option value=""></option>
@@ -54,11 +63,11 @@ if($error==1){
                     <option value="Cofradia">Cofradia</option>
                     <option value="Nosotras craft">Nosotras craft</option>
                  </select>
-          <br><br>Posición:
-          <input type="radio" name="posicion" value="lider">Líder
-          <input type="radio" name="posicion" value="integrante">Integrante
-            <br><br>Ministerio:
-            <input type="radio" name="ministerio" value="Alabanza">Alabanza
+          <br><br>Posición:<br><br>
+          <input type="radio" name="posicion" value="lider">Líder<br><br>
+          <input type="radio" name="posicion" value="integrante">Integrante<br>
+            <br><br>Ministerio: <br><br>
+            <input type="radio" name="ministerio" value="Alabanza">Alabanza<br><br>
             <input type="radio" name="ministerio" value="Voluntariado">Voluntariado
           <br><br><br><input type="submit" id="guardar" value="Guardar">
         </form>
