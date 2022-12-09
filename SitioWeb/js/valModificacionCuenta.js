@@ -1,4 +1,12 @@
 function validarCuenta(form){
+    x = document.getElementById("usuarioSelect");
+    opcion =  x.options[x.selectedIndex].text;
+    if(opcion == ""){
+        alert("No seleccionó un Usuario");
+        form.usuario.focus();
+        return false;
+    }
+
     if(form.nombre.value==""){
         alert("Nombre inválido");
         form.nombre.select();
@@ -27,40 +35,32 @@ function validarCuenta(form){
 
     cel = form.celular.value;
     if(cel.length >10 || cel.length<10){
-        alert("Celular inválido, longitud incorrecta");
+        alert("Celular inválido por longitud");
         form.celular.select();
-        return false;
-    }
-
-    x = document.getElementById("grupoSelec");
-    opcion =  x.options[x.selectedIndex].text;
-    if(opcion == ""){
-        alert("No seleccionó un grupo");
-        form.grupos.focus();
-        return false;
-    }
-
-    for(i=0; i<form.posicion.length; i++){
-        if(form.posicion[i].checked) break;
-    }
-    if(i==form.posicion.length) {
-        alert("No seleccionó su posición");
-        form.posicion[0].focus();
-        return false;
-    }
-
-    for(i=0; i<form.ministerio.length; i++){
-        if(form.ministerio[i].checked) break;
-    }
-    if(i==form.ministerio.length) {
-        alert("No seleccionó su ministerio");
-        form.ministerio[0].focus();
         return false;
     }
 }
 
+function mostrarPantalla(arregloUsuario, form){
+    auxArray = [].concat(arregloUsuario)
+    var x = document.getElementById("usuarioSelect");
+    opcion =  x.options[x.selectedIndex].text;
+    if(opcion!= ""){
+        const resultado = auxArray.find( element => element.NombreUsu === opcion );
+        form.nombre.value = resultado.Nombre;
+        form.apellidoP.value = resultado.APaterno;
+        form.apellidoM.value = resultado.AMaterno;
+        form.celular.value = resultado.Celular;
+    }
+    
+}
+
 window.onload=function(){
     document.getElementById("guardar").onclick=function(){
-        return validarCuenta(Fcuenta);
+        return validarCuenta(info);
+    }
+
+    document.getElementById("usuarioSelect").onchange = function(){ 
+        mostrarPantalla(arregloUsuario, info);
     }
 }

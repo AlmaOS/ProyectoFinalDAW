@@ -14,16 +14,17 @@
       <div class="logo"><a href="index.html"><img src="img/logoIglesiaBlanco.png" alt="logo"></a></div>
       <div class="headTxt"><div class="titulo">Manantial de vida</div>
         <div class="subtitulo">Cuentas</div></div>
+        <div class="regresar"><a href="CRUD/tablaCuentas.php">Regresar</a></div>
     </div>
     <div class="content">
-      <div class="form">
-        <form name="Fcuenta" method=post action="Cuenta/registrar.php">
+      <div class="form">                               <!-- Cuenta/registrar.php-->
+        <form name="Fcuenta" method="post" action="Cuenta/registrar.php">
           Nombre:<input type="text" name="nombre">
           <br>*Si se tienen dos nombres, ingresar ambos<br><br>
           Apellido paterno: <input type="text" name="apellidoP"><br><br>
           Apellido materno: <input type="text" name="apellidoM"><br><br>
           Celular: <input type="text" name="celular"><br><br>
-          Grupo: <select name="grupos">
+          Grupo: <select name="grupos" id="grupoSelec">
                     <option value=""></option>
                     <option value="Iglekids">Iglekids</option>
                     <option value="Matrimonios">Matrimonios</option>

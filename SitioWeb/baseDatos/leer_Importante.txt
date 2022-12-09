@@ -1,0 +1,4 @@
+La base de datos proyectoweb3 no tiene vitsa. 
+Cada usuario la debe crear con el siguiente comando
+
+Create view serviciosmv as select * from servicio
