@@ -1,4 +1,24 @@
-
+<?php
+$error=(isset($_REQUEST["error"]))? $_REQUEST["error"]:0;
+if($error==1){
+    switch ($error) {
+        case 1:
+            $cadena = "alert('Alguno de los campos no se llenó correctamente')";
+            break;
+        case 2:
+            $cadena = "alert('Alguno de los campos está vacío')";
+            break;
+        case 3:
+            $cadena = "alert('El celular dado es inválido')";
+            break;
+        case 4:
+            $cadena = "alert('Falló la conexión a la base de datos');";
+            break;
+        default:
+            $cadena = "";
+    }
+}
+?>
 <html lang="en" xmlns:for="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +27,7 @@
     <link rel="shortcut icon" href="img/logoIcono.ico">
     <link rel="stylesheet" href="css/formStyle.css">
     <script src="js/valCuenta.js"></script>
+    <script><? echo $cadena?></script>
 </head>
 <body>
   <div>
