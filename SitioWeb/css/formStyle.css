@@ -273,6 +273,13 @@ td,th{
     }
 }
 
+@media screen and (max-width: 320px) {
+    input[type=text]{
+        width: 120px;
+    }
+}
+
+
 @media print{
     body{
         display: none;
