@@ -2,25 +2,25 @@
   if(isset($_REQUEST["error"])){
     switch ($_REQUEST["error"]) {
       case 1:
-          $cadena = "Error._1";
+          $cadena = "Error_1";
           break;
       case 2:
-          $cadena = "Error._2";
+          $cadena = "Error_2";
           break;
       case 3:
-           $cadena = "Error._3";
+           $cadena = "Error_3";
            break;
       case 4:
-        $cadena = "Error._4";
+        $cadena = "Error_4";
         break;
       case 5:
-        $cadena = "Error._5";
+        $cadena = "Error_5";
         break;
       default:
         $cadena = "";
     }
   }else{
-    $cadena = "";
+    isset($_REQUEST["correcto"])?$cadena = "Correcto_1":$cadena = "";
   }
 ?>
 
@@ -32,6 +32,7 @@
         <title>Servicios</title>
         <link rel="shortcut icon" href="img/logoIcono.ico">
         <link rel="stylesheet" href="css/formStyle.css">
+        <script src="js/estadosResultados.js"></script>
         <script src="js/valRecaudacion.js"></script>
         <script>
 	        <?php echo "var estado = '" . $cadena . "';"; ?>
@@ -47,7 +48,7 @@
             </div>
             <div class="content">
                 <div id="estado">
-                    <img src="img/advertencia.png" alt="ocurre error">
+                    <img src="" alt="ocurre error" id="imgEstado">
                     <div id=textoEstado></div>
                 </div>
                 <div class="form">

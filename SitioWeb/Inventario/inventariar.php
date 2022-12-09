@@ -43,7 +43,13 @@
 	if (!$conexion) {
     	die("Fallo: " . mysqli_connect_error());
 	}
-    $contador = count($_REQUEST["inventario"]);
+
+    if (isset($_REQUEST["inventario"])) {
+        $contador = count($_REQUEST["inventario"]);
+    }else{
+        header("location: ../inventario.php?error=6");
+        exit();
+    }
     for ($i = 0; $i < $contador; $i++) {
         $aux = $_REQUEST["inventario"][$i];    
         $valores = explode('_', $aux);
@@ -54,12 +60,12 @@
         $sql = "INSERT INTO	articulos (Fecha, ClvArticulo, NombreArticulo) VALUES ('" . $date . "', '" . $clave . "', '" . $articulo . "')";
         $resultado = mysqli_query($conexion, $sql);
         if (!$resultado) {
-            header("location: ../inventario.php?error=5?");
+            header("location: ../inventario.php?error=5");
         }
     }
 
     mysqli_close($conexion);
-    header("location: ../inventario.php?correcto=1?");
+    header("location: ../inventario.php?correcto=1");
     exit();
 
     function validarFecha($fecha){

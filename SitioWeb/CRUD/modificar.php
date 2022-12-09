@@ -10,18 +10,28 @@
         $diezmoNuevo=(isset($_REQUEST["diezmo"]))? $_REQUEST["diezmo"]:"";
         $sql="SELECT diezmo, ofrenda, totalRecaudaciones from servicio WHERE Fecha='".$FechaGuardar."'";
         $recauds=ConsultarSQL($servidor, $usuario, $contrasena, $basedatos, $sql);
-        if($diezmoNuevo!=""){
-            $totalRecs=$recauds[0]["ofrenda"]+$diezmoNuevo;
-            $sql="UPDATE servicio SET Diezmo='".$diezmoNuevo."', totalRecaudaciones='".$totalRecs."' WHERE Fecha='".$FechaGuardar."'";
+        if($diezmoNuevo!=""&&$ofrNuevo!=""){
+            $totalRecs=$diezmoNuevo+$ofrNuevo;
+            $sql="UPDATE servicio SET Diezmo='".$diezmoNuevo."', Ofrenda='".$ofrNuevo."', totalRecaudaciones='".$totalRecs."' WHERE Fecha='".$FechaGuardar."'";
             EjecutarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
+            header("location: tablaServicios.php");
+        }else{
+            if($diezmoNuevo!=""){
+                $totalRecs=$recauds[0]["ofrenda"]+$diezmoNuevo;
+                $sql="UPDATE servicio SET Diezmo='".$diezmoNuevo."', totalRecaudaciones='".$totalRecs."' WHERE Fecha='".$FechaGuardar."'";
+                EjecutarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
+                header("location: tablaServicios.php");
+            }else {
+                if ($ofrNuevo != "") {
+                    $totalRecs = $recauds[0]["diezmo"] + $ofrNuevo;
+                    $sql = "UPDATE servicio SET ofrenda='" . $ofrNuevo . "', totalRecaudaciones='" . $totalRecs . "' WHERE Fecha='" . $FechaGuardar . "'";
+                    EjecutarSQL($servidor, $usuario, $contrasena, $basedatos, $sql);
+                    header("location: tablaServicios.php");
+                }else{
+                    header("location: recaudaciones.php");
+                }
+            }
         }
-        if($ofrNuevo!=""){
-            $totalRecs=$recauds[0]["diezmo"]+$ofrNuevo;
-            $sql="UPDATE servicio SET ofrenda='".$ofrNuevo."', totalRecaudaciones='".$totalRecs."' WHERE Fecha='".$FechaGuardar."'";
-            EjecutarSQL($servidor,$usuario,$contrasena,$basedatos,$sql);
-        }
-
-        header("location: tablaServicios.php");
     }else{
         $nombreNuevo=(isset($_REQUEST["nombre"]))? $_REQUEST["nombre"]:"";
         $paternoNuevo=(isset($_REQUEST["apellidoP"]))? $_REQUEST["apellidoP"]:"";

@@ -1,30 +1,30 @@
 <?php
   if(isset($_REQUEST["error"])){
     switch ($_REQUEST["error"]) {
-      case 1:
-          $cadena = "Error._1";
+        case 1:
+            $cadena = "Error_1";
+            break;
+        case 2:
+            $cadena = "Error_2";
+            break;
+        case 3:
+             $cadena = "Error_3";
+             break;
+        case 4:
+          $cadena = "Error_4";
           break;
-      case 2:
-          $cadena = "Error._2";
+        case 5:
+          $cadena = "Error_5";
           break;
-      case 3:
-           $cadena = "Error._3";
-           break;
-      case 4:
-        $cadena = "Error._4";
-        break;
-      case 5:
-        $cadena = "Error._5";
-        break;
-      case 6:
-        $cadena = "Error._6";
-        break;
-      default:
-        $cadena = "";
+        case 6:
+          $cadena = "Error_6";
+          break;
+        default:
+          $cadena = "";
+      }
+    }else{
+      isset($_REQUEST["correcto"])?$cadena = "Correcto_1":$cadena = "";
     }
-  }else{
-    $cadena = "";
-  }
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@
             <div class="content">
 
                 <div id="estado">
-                    <img src="img/advertencia.png" alt="ocurre error">
+                    <img src="" alt="ocurre error" id="imgEstado">
                     <div id=textoEstado></div>
                 </div>
 

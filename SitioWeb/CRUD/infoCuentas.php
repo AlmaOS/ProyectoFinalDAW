@@ -48,8 +48,12 @@ function llenarSeleccion($array){
                 Usuario: <?=llenarSeleccion($array)?>
                 <br><br>Nombre:<input type="text" name="nombre">
                 <br>*Si se tienen dos nombres, ingresar ambos<br><br>
+                <label class="ModificaUsuario">
                 Apellido paterno: <input type="text" name="apellidoP"><br><br>
+                </label>
+                <label class="ModificaUsuario">
                 Apellido materno: <input type="text" name="apellidoM"><br><br>
+                </label>
                 Celular: <input type="text" name="celular"><br><br>
                 <br><br><br><input type="submit" id="guardar" value="Guardar">
             </form>

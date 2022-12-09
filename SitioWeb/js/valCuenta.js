@@ -1,3 +1,4 @@
+
 function validarCuenta(form){
     if(form.nombre.value==""){
         alert("Nombre inválido");

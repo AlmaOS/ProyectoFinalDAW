@@ -29,7 +29,7 @@ include("../funciones.php");
     }
 
     if(!is_numeric($celular)){
-        header("location: ../cuentas.php?error=2");
+        header("location: ../cuentas.php?error=3");
         exit();
     }
 
@@ -42,7 +42,7 @@ include("../funciones.php");
         $resultado = mysqli_query($conexion, $sql);
     } catch(Exception $e) {
         mysqli_close($conexion);
-        header("location: ../cuentas.php?error=3");
+        header("location: ../cuentas.php?error=4");
         exit();
     }
 
@@ -66,7 +66,7 @@ include("../funciones.php");
         $resultado = mysqli_query($conexion, $sql);
     }catch(Exception $e) {
         mysqli_close($conexion);
-        header("location: ../cuentas.php?error=5");
+        header("location: ../cuentas.php?error=4");
         exit();
     }
 
@@ -77,7 +77,7 @@ include("../funciones.php");
         $resultado = mysqli_query($conexion, $sql);
     }catch(Exception $e) {
         mysqli_close($conexion);
-        header("location: ../cuentas.php?error=5");
+        header("location: ../cuentas.php?error=4");
         exit();
     }
 

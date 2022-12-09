@@ -78,10 +78,8 @@ function insertarVersiculo(){
     console.log(aux+"imprime");
     if(aux == null){
         texttoEjemplo = '{"book": { "abbrev": {"pt": "pv","en": "prv"}, "name": "Provérbios", "author": "Salomão","group": "Poéticos","version": "rvr"},"chapter": 27,"number": 6, "text": "Son más confiables las heridas del que ama, que los falsos besos del que aborrece."}';
-        console.log("no entra aquíiiiiii");
     }else{
         texttoEjemplo = localStorage.getItem("Versi");
-        console.log("no entra aquí");
     }
     const obj = JSON.parse(texttoEjemplo);
     var elemento = document.getElementById("prueba");
@@ -124,9 +122,9 @@ var http_request = false;
             if (http_request.status == 200) {
                 localStorage.setItem("Versi", http_request.responseText);
             } else {
+                http_request.abort();
                 alert('Hubo problemas con la petición.');
                 localStorage.setItem("Versi", '{"book": { "abbrev": {"pt": "pv","en": "prv"}, "name": "Provérbios", "author": "Salomão","group": "Poéticos","version": "rvr"},"chapter": 27,"number": 6, "text": "Son más confiables las heridas del que ama, que los falsos besos del que aborrece."}');
-                console.log("Se llegó al limite de peticiones");
             }
         }
 

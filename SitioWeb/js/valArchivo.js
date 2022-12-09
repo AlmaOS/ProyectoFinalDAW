@@ -2,7 +2,12 @@ function ocultarPanelEstado(panelEstado) {
     document.getElementById("estado").style.display = "none";
 }
 
-function mostarMensaje(mensaje){
+function mostarMensaje(mensaje,estado){
+    if(estado == 1){
+        document.getElementById("imgEstado").src = "img/advertencia.png";
+    }else{
+        document.getElementById("imgEstado").src = "img/registrado.png";
+    }
     document.getElementById("estado").style.display = "flex";
     panelEstado = document.getElementById("textoEstado");
     panelEstado.innerHTML+= mensaje;
@@ -12,28 +17,32 @@ function mostarMensaje(mensaje){
 function mostrarMensajes(estadosMensajes){
     partesMensaje = estadosMensajes.split("_");
     //alert("Mensase 1 es: "+ partesMensaje[0]+" "+ partesMensaje[1]);
-    if (estadosMensajes != "") {
+    if (estadosMensajes != "" && partesMensaje[0] == "Error") {
         switch (partesMensaje[1]) {
             case '1':
-                mostarMensaje("Fecha vacia");
+                mostarMensaje("Fecha vacia",1);
               break;
             case '2':
-                mostarMensaje("Formato de fecha incorrecto");
+                mostarMensaje("Formato de fecha incorrecto",1);
               break;
             case '3':
-                mostarMensaje("El servicio no ha sido creado o no se ha pasado inventario");
+                mostarMensaje("El servicio no ha sido creado o no se ha pasado inventario",1);
             break;
             case '4':
-                mostarMensaje("Sucedi&oacute; un error con la subida del archivo");
+                mostarMensaje("Sucedi&oacute; un error con la subida del archivo",1);
             break;
             case '5':
-                mostarMensaje("Archivo demsiado pesado");
+                mostarMensaje("Archivo demsiado pesado",1);
             break;
             case '6':
-                mostarMensaje("No es correcto el tipo de archivo");
+                mostarMensaje("No es correcto el tipo de archivo",1);
             break;
             default:
           }
+    }else{
+        if (estadosMensajes != "" && partesMensaje[0] == "Correcto"){
+            mostarMensaje("Archivo subido correctamente",2);
+        }
     }
 }
 
