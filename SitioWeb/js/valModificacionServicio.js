@@ -12,7 +12,6 @@ function validarModificacion(Frecauds){
         form.fechaServs.focus();
         return false;
     }
-    alert("aaaa");
 
     if(Frecauds.ofrendas.value==""){
         return confirm("Las ofrendas no se cambiarán, ¿es correcto?");
