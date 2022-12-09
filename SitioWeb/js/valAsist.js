@@ -2,7 +2,12 @@ function ocultarPanelEstado(panelEstado) {
     document.getElementById("estado").style.display = "none";
 }
 
-function mostarMensaje(mensaje){
+function mostarMensaje(mensaje,estado){
+    if(estado == 1){
+        document.getElementById("imgEstado").src = "img/advertencia.png";
+    }else{
+        document.getElementById("imgEstado").src = "img/registrado.png";
+    }
     document.getElementById("estado").style.display = "flex";
     panelEstado = document.getElementById("textoEstado");
     panelEstado.innerHTML+= mensaje;
@@ -12,19 +17,23 @@ function mostarMensaje(mensaje){
 function mostrarMensajes(estadosMensajes){
     partesMensaje = estadosMensajes.split("_");
     //alert("Mensase 1 es: "+ partesMensaje[0]+" "+ partesMensaje[1]);
-    if (estadosMensajes != "") {
+    if (estadosMensajes != "" && partesMensaje[0] == "Error") {
         switch (partesMensaje[1]) {
             case '1':
-                mostarMensaje("campos vacios");
+                mostarMensaje("campos vacios",1);
               break;
             case '2':
-                mostarMensaje("Formato incorrecto de fecha u hora");
+                mostarMensaje("Formato incorrecto de fecha u hora",1);
               break;
             case '3':
-                mostarMensaje("Ya hay una asistencia guardada");
+                mostarMensaje("Ya hay una asistencia guardada",1);
             break;
             default:
           }
+    }else{
+        if (estadosMensajes != "" && partesMensaje[0] == "Correcto"){
+            mostarMensaje("Datos registrados correctamente",2);
+        }
     }
 }
 

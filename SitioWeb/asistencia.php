@@ -1,20 +1,20 @@
 <?php
-  if(isset($_REQUEST["error"])){
+if(isset($_REQUEST["error"])){
     switch ($_REQUEST["error"]) {
       case 1:
-          $cadena = "Error._1";
+          $cadena = "Error_1";
           break;
       case 2:
-          $cadena = "Error._2";
+          $cadena = "Error_2";
           break;
       case 3:
-           $cadena = "Error._3";
+           $cadena = "Error_3";
            break;
       default:
         $cadena = "";
     }
   }else{
-    $cadena = "";
+    isset($_REQUEST["correcto"])?$cadena = "Correcto_1":$cadena = "";
   }
 ?>
 
@@ -42,7 +42,7 @@
             </div>
             <div class="content">
                 <div id="estado">
-                <img src="img/advertencia.png" alt="ocurre error">
+                <img src="" alt="ocurre error" id="imgEstado">
                 <div id=textoEstado></div>
                 </div>
                 <div class="form">
